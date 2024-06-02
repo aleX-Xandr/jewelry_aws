@@ -1,2 +1,6 @@
 /media
 /static/admin
+/static/jazzmin
+/static/vendor
+/static/ckeditor
+/.env

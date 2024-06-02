@@ -26,7 +26,7 @@ class SocialAdmin(admin.ModelAdmin):
 
 
 class PageAdminForm(forms.ModelForm):
-    text = forms.CharField(widget=CKEditorWidget(), label="Текст")
+    text = forms.CharField(widget=CKEditorWidget(), label="Text")
 
     class Meta:
         model = Page
