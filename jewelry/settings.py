@@ -31,12 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'ckeditor',
 
     'user',
     'base',
@@ -71,6 +75,7 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATES[0]['OPTIONS']['context_processors'].append("base.context_processors.context_controller")
 
 WSGI_APPLICATION = 'jewelry.wsgi.application'
 
@@ -130,6 +135,14 @@ else:
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Jewelry Admin",
+    "site_header": "Jewelry",
+    "site_brand": "Jewelry",
+    "welcome_sign": "Welcome",
+    "copyright": "Jewelry",
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

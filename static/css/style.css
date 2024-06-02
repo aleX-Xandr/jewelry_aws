@@ -1,0 +1,1213 @@
+html, body, a ul li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type:none
+}
+a{
+    text-decoration: none;
+    list-style-type:none ;
+    color: #000;
+}
+
+ul li{
+    list-style-type:none ;
+    text-decoration: none;
+    color: #000;
+}
+#active-link a{
+    color: #3546BA;
+    text-decoration: underline;
+}
+.basket-img{
+    background-color: #3546BA;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    width: 35px;
+    right: 10px;
+    top: 10px;
+    margin-left: 80%;
+    border-radius: 15px;
+    margin-bottom: -31px;
+}
+.basket-number {
+    background-color: #E0CE57;
+    color: white;
+    position: absolute;
+    padding: 5px;
+    width: 20px;
+    right: 31px;
+    top: 17px;
+    margin-left: 80%;
+    border-radius: 100px;
+    margin-bottom: -31px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 15.72px;
+
+}
+
+.main-box .container .nav-bar{
+    position: relative;
+    box-shadow: 0px 0px 20.2px 0px #0000000F;
+
+}
+
+.main-box{
+    
+    text-decoration: none;
+    list-style-type:none ;
+    text-align: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+.main-box .container{
+    list-style-type:none ;   
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.main-box .container .nav-bar{
+    list-style-type:none ;
+    margin-top: 50px;
+    border-radius: 20px;
+    margin-left: 32%;
+    margin-right: 32%;
+    background-color: #FFFCF3;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1)
+    color(0 0 0 0)
+}
+.nav-title{
+    text-align: center;
+    font-family: Inika;
+     margin-top: 53px;
+     font-size: 36px;
+}
+
+.main-box .container .nav-bar .image{
+    list-style-type:none ;
+    align-items: center;
+}
+
+.main-box .container .nav-bar .line img{ 
+  width: 100%;
+   
+}
+.main-box .container .nav-bar .list ul {
+    list-style-type:none ;
+    font-size: 16px;
+    display: flex;
+    font-family: Inika;
+    text-align: center;
+    justify-content: center;
+    margin-top: 21px;
+}
+.main-box .container .nav-bar .list ul li{
+    padding-right: 40px;
+    padding-bottom: 20px;
+    
+}
+
+.about-section {
+    margin-left: 8.125%;
+    margin-right: 8.125%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inika;
+    margin-bottom: -120px;
+}
+.about-section-mobile {
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inika;
+    display: none;
+    margin-bottom: 0;
+}
+
+.about-section-mobile .silver-medal-img{
+    margin-top: -5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   max-height: 450px
+}
+.about-section-mobile .about-image-block-column1{
+    display: none;
+}
+.about-section-mobile .cheriffs-medal-img{
+    margin-top: -5px;
+    
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: black;
+}
+
+.about-block {
+    box-shadow: 18px 14px 55.2px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 126px;
+}
+.about-section-mobile .about-block {
+    margin-bottom: 0px;
+}
+
+.about-first-row {
+    display: flex;
+    
+}
+.about-section-mobile .about-first-row{
+    display: block;
+}
+
+.about-second-row {
+    display: flex;
+    height: 301px;
+    
+}
+
+.about-text-block {
+    flex: 1;
+}
+
+.about-text-block p {
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-size: 17px;
+    
+}
+.about-section-mobile .about-text-block p {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-size: 14px;
+    
+}
+
+.about-image-block {
+    display: flex;
+    flex: 1;
+    height: auto;
+    
+}
+
+.about-image-block-column1 {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.about-image-block-column2 {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.about-image-image-block {
+    position: relative;
+    flex: 1;
+    margin-bottom: -5px;    
+}
+
+.about-image-image-block-text {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    border-radius: 7px;
+    
+}
+
+.about-image-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-wrap: wrap;
+    
+    
+  }
+
+.contact-info{
+text-decoration: none;
+list-style-type:none ;
+font-family: Inika;
+margin-top: 126px;
+justify-self: space-around;
+display: grid;
+}
+
+.contact-info h2{
+    font-size: 21px;
+    font-weight: 700;
+    
+}
+
+.contact-info-mobile{
+        text-decoration: none;
+        list-style-type:none ;
+        font-family: Inika;
+        font-size: 16px;
+        font-weight: 400;
+        display: none;
+        margin-top: 63px;
+}
+.contact-info-mobile h2{
+    font-size: 21px;
+    font-weight: 700;
+    
+}
+
+ .info-container{
+width: 10;
+background-color: #FFF0C2;
+text-align: center;
+align-items: center;
+justify-content: space-between;
+}
+
+ .info-container ul{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+ .info-container .text-info{
+    display: flex;
+    
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+ .info-container .text-info .adress{
+margin-left: 12.58%;
+width: 400px;
+margin-right: 9%;
+width: 244px;
+
+}
+ .info-container .text-info .menu{
+    margin-right: 12.23%;
+    padding-top: 20px;
+    
+}
+
+ .info-container .text-info .menu ul li{
+    color: #4A4A4A;
+}
+.info-container .text-info .social-links{
+    margin-right: 158px;
+    margin-top: -10px;
+}
+
+ .info-container .text-info .social-links .social-icons img{
+    background-color: #3546BA;
+    padding: 6px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    text-align: left;
+
+}
+.facebook-icon{
+    padding: 1px;
+}
+
+    .bg-container{
+        display: flex;
+        position: absolute;
+        z-index: -99;
+        width: 100%;
+    }
+    
+    .bg-img{
+        
+        position: absolute;
+        z-index: -99;
+        flex: 0.1;
+    }
+    
+    .section{
+        align-items: center;
+        display: grid;
+        justify-content: center;
+        border-radius: 100px;
+    }
+    .section-container{
+        flex-direction: column;
+        display: flex;
+        position: relative;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .photo-cards{
+        display: flex;
+        font-family:Inika ;
+        font-size: 18px;
+        font-weight: 400;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        flex: 1 5 auto;
+        
+    }
+    
+    
+    .photo-card{
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        flex: 1 10 auto;
+        box-shadow: 18px 14px 55.2px 0px rgba(0, 0, 0, 0.08);
+        max-width: 554px;
+    }
+    
+    #photo-card{
+        margin-right: 5%;
+    }
+
+
+    .position-img{
+        display: flex;
+       flex: 1 2 auto;
+       
+       
+    }
+    .position-img img{
+    flex: 1 2 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    .photo-card-text-info{
+    line-height: 23.15px;
+    text-align: right;
+    height: 286px;
+    background-color: #FFFCF3;
+    /* margin-top: -20px; */
+    flex: 1 1 auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    }
+    
+    
+    .photo-card-text-info-2{
+    line-height: 23.15px;
+    text-align: right;
+    height: 286px;
+    background-color: #F9F9FF;
+    /* margin-top: -20px; */
+    flex: 1 1 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+    
+    
+    .left-text{
+        display: flex;
+        justify-content: space-between;
+    }
+    #work-time{
+     text-align: right;
+    }
+    
+    .desc{
+    color: #606060;
+    margin-left: 25px;
+    text-align: left;
+    
+    }
+    .desc-info{
+    margin-right: 25px;
+    }
+    .phone-number{
+        text-decoration: none;
+        list-style-type:none ;
+        color: #3546BA;
+        font-family: Inter;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .form-blocks{
+        font-family: Inika;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 19px;
+        box-shadow: 18px 14px 55.2px 0px rgba(0, 0, 0, 0.1);
+        width: 100%
+        ;
+        background-color: #1B2251;
+        flex: 2;
+        min-height: 450px;
+    }
+    .form-info{
+        /* background-color: #1B2251; */
+        color: #FFFFFF;
+        padding: 0 62px 0px 62px;
+        width: fit-content;
+        height: fit-content;
+        max-width: 628px;
+        min-width: 365px;
+        height: 100%;
+        object-fit: cover;
+        flex: 1;
+    }
+    .form-info p{
+        
+    }
+    .form-info a {
+        color: #E0CE57;
+        flex: 1 2 auto;
+    }
+    .upper-form-info{
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+    .upper-form-info p{
+       
+    }
+    .down-form-info{
+        margin-top: 100px;
+    }
+
+    .form-blocks-container{
+        width: 91.5%;
+        border-radius: 20px;
+        justify-self: center;
+    }
+    .form-container{
+        background-color: #fff;
+        padding:54px 54px 47px 54px;
+        width: fit-content;
+        height: fit-content;
+        flex: 1;
+        width: 100%;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 100%;
+        object-fit: cover;
+    }
+   
+    .form{
+        flex: 1;
+        font-family: Inika;
+        font-size: 17px;
+        flex: 1 10 auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    .form-button{
+        font-family: Inika;
+        background-color: #E0CE57;
+        width: 93% ;
+        display: grid;
+        color: #fff;
+        padding: 20px 138px 20px 144px ;
+        border-radius:12px ;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        margin: 0 20px 6px 20px;
+        box-shadow: 4px 5px 8px 0px #0000001A;
+
+    }
+    .form-group{
+        display: flex;
+        position: relative;
+        margin-bottom: 14px;
+        flex: 1 2 auto;
+       
+    }
+    .form-label{
+        position: absolute;
+        top: 18px;
+        z-index:1;
+        color: #606060;
+        transition: 0.3s;
+        left: 48px;
+        cursor: pointer;
+    }
+
+    .form input{
+        /* width: 5%; */
+        padding-bottom: 30px;
+        border: none;
+        padding-top: 100px;
+        transition: 0.3s;
+        border-radius: 15px;
+        padding: 20px 0 20px 15px;
+        background-color: #F9F9FF;
+        font-size: 17px;
+        width: 92%;
+        margin: 0 20px 0 20px;
+    }
+
+   .form-button .from input:focus{
+        border: 1px solid #1B2251;
+    }
+
+    .from-label{
+    }
+    .form-label:focus{
+        z-index: -999;
+    }
+    #message-form{
+        height: 130px;
+    }
+    .from-input:focus ~ .form-label,
+    .from-input:not(:placeholder-shown) ~ .form-label{
+        top: -18px;
+        font-size: 12px;
+        color: #1B2251;
+    }
+   
+   
+    .catalog-jewerly{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .jewerly-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .jewerly-card{
+        justify-content: space-between;
+        height: 320px;
+        width: 340px;
+        margin-bottom: 60px;
+    }
+    #bottom-left-jewerly-card{
+        
+    }
+    #top-left-jewerly-card{
+       
+    }
+    .jewerly-info{
+        display: flex;
+        background-color: #1B2251;
+        color: white;
+        font-family: Inika;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 0 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        
+        max-width: 340px;
+    }
+    .jewerly-info-yellow{
+        display: flex;
+        background-color: #E0CE57;
+        color: white;
+        font-family: Inika;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 0 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      
+        max-width: 340px;
+    }
+    .jewerly-info p{
+        box-shadow: 18px 14px 55.2px 0px #00000014;
+        font-size: 21px;
+        font-weight: 700;
+        font-family: Inika;
+    }
+    .jewerly-info-yellow p{
+        box-shadow: 18px 14px 55.2px 0px #00000014;
+        font-size: 21px;
+        font-weight: 700;
+        font-family: Inika;
+    }
+    .jewerly-img{
+        width: 100%;
+    }
+    .jewerly-img img{
+        border-bottom-right-radius: 15px;
+        box-shadow: 18px 14px 55.2px 0px #00000014;
+        border-bottom-left-radius: 15px;
+        width: 100%;
+        max-height: 300px ;
+        background-color: #fff;
+        
+        max-width: 340px;
+    }   
+    .jewerly-info .arrow-right-direction{
+        border-radius: 50px;
+        padding: 12px 14px 12px 14px;
+        height: 10px;
+        background-color: #3546BA;
+    }
+    .jewerly-info-yellow .arrow-right-direction{
+        border-radius: 50px;
+        padding: 12px 14px 12px 14px;
+        height: 10px;
+        background-color: #3546BA;
+    }
+    
+    
+    .order-window{
+    justify-content: center;
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    font-family: Inika;
+    }
+    .order-window-container{
+        box-shadow: 18px 14px 55.2px 0px #00000014;
+        display: flex;
+        font-family: Inika;
+        justify-content: center;
+        max-height: 400px;
+        
+    }
+    .order-window-mobile{
+        justify-content: center;
+        display: flex;
+        margin-top: 80px;
+        align-items: center;
+        font-family: Inika;
+        display: none;
+    }
+    .order-window-mobile .order-window-container{
+        box-shadow: 18px 14px 55.2px 0px #00000014;
+        display: flex;
+        font-family: Inika;
+        justify-content: center;
+        max-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирует изображения и текст по горизонтали */
+        margin-bottom: 10px; /* Расстояние между элементами */
+        padding-bottom: 192px;  
+        padding-top: 192px;
+    }
+    .order-window-mobile .order-info{
+        height: 100%;
+        padding-top: 200px;
+    }
+    .order-info{
+    padding: 20px 37px 36px 37px;
+    font-family: Inika;
+    flex: 1;
+    }
+    .order-info-title{
+        font-family: Inika;
+        font-weight: 700;
+        font-size: 21px;
+        padding: 0 0 0 10px;
+        line-height: 27.01px;
+        font-family: Inika;
+        margin-bottom: 37px;    
+    }
+    .order-info-lower-desc-line{
+        border-left: 0.5px solid #3546BA;
+        margin-right: 10px;
+        font-family: Inika;
+    }
+    .order-info-desc{
+        padding: 0 0 0 10px;
+        font-family: Inika;
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 40px;
+        font-family: Inika;
+        line-height: 23px;
+    }
+    .order-info-lower-desc{
+        font-family: Inika;
+        font-weight: 400;
+        font-size: 16px;
+        color: #3546BA;
+        border-left: 0.5px solid #3546BA;
+        margin-bottom: 47px;
+        font-family: Inika;
+        line-height: 20.58px;
+    }
+    .order-info-desc p{
+        margin:0 ;
+    }
+    .order-info-lower-desc p{
+        padding: 0 0 0 10px;
+        font-family: Inika;
+        margin: 0;
+    }    
+    .order-info-button{
+ display: flex;
+ padding: 0 0 0 10px;
+ font-family: Inika;
+    }
+
+    .order-info-button a{
+        color: #3546BA;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23.15px;
+        font-family: Inika;
+    }
+    .order-info-button p{
+        font-family: Inika;
+    }
+    .order-button{
+        font-family: Inika;
+    }
+    .button-order{
+        font-family: Inika;
+        background-color: #E0CE57;
+        width: 50% ;
+        display: grid;
+        color: #fff;
+        padding: 20px;
+        border-radius:12px ;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        margin: 0 20px 6px 0;
+        box-shadow: 4px 5px 8px 0px #0000001A;
+        align-items: left;
+        font-family: Inika;
+    }
+    .order-imgs{
+        width: 60%; /* Ширина картинки - 50% от контейнера для двух картинок в строке */
+      height: auto; /* Сохраняет пропорции картинки */
+      margin: 0; /* Убираем отступы */
+      padding: 0; /* Убираем внутренние отступы */
+      box-sizing: border-box;
+     height: 100%;
+      max-width: 640px;
+    }
+    .order-window-mobile .order-imgs{
+        width: 100%;
+    }
+    .order-imgs img{
+        margin: -5PX;
+        padding-top: 5px;
+    }
+    
+    
+
+@media(max-width:1500px){
+    .info-container .text-info .adress{
+        margin-left: 150px;
+        margin-right: 20px;
+    }
+    .about-section{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .about-text-block p{
+        padding: 5px 13px 22px 13px;
+    }
+}
+
+@media(max-width:1200px){
+
+    .main-box .container .nav-bar{
+        font-size: 15px;
+    }
+    
+
+     .info-container .text-info .adress{
+        margin-left: 0;
+        margin-right: 20px;
+    }
+     .info-container .text-info .menu{
+        margin-right: 50px;
+        padding-top: 20px;
+    }
+    .info-container .text-info .social-links{
+        margin-right: 10px;
+        }
+
+        .photo-card{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+}
+@media(max-width:1000px){
+
+    .basket-img{
+        background-color: #3546BA;
+        position: absolute;
+        width: 30px;
+        right: 0;
+        top: 0;
+        margin-left: 80%;
+        border-radius: 15px;
+        margin-bottom: -31px;
+    }
+    .main-box .container .nav-bar{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .basket-img{
+        border-radius: 0;
+    }
+    .about-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .about-section-mobile .about-text-block p {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 14px;
+    }    
+     .info-container .text-info .adress{
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+     .info-container .text-info .menu{
+        margin-right: 50px;
+        padding-top: 20px;
+    }
+    .photo-cards{
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }   
+    .photo-card-text-info{
+    height: 300px;
+}
+.photo-card-text-info-2{
+    height: 300px;
+}
+    .photo-card{
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width:900px;
+    }
+    .form-blocks{
+        display: block;
+        margin: 10px 1px 20px 1px;
+        font-style: 14px;
+        width: 100%;
+    }
+    .upper-form-info{
+        width: 90%;
+        
+    }
+    .form-container{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px;
+        padding: 33px 0 9px 0;
+    }
+    .form-button{
+        width: 94%;
+        margin-left: 20px;
+    }
+    #photo-card{
+        margin-right: 20px;
+    }
+    .form-info{
+        max-width: 1000px;
+        padding: 52px 72px 52px 40px;
+    }
+    .upper-form-info{
+        margin-top: 20px;
+        margin-bottom:  -40px;
+        height: 10vh;
+    }
+    .form{
+        width: 100%;
+    }
+    .about-section-mobile{
+        display: flex;
+       
+     }
+     .about-section{
+        display: none;
+     }
+     
+   .order-window{
+    display: none;
+   }
+   .order-window-mobile{
+    display: flex;
+   }
+}
+@media(max-width:620px){
+    .nav-title{
+        text-align: center;
+        font-family: Inika;
+         margin-top: 33px;
+         font-size: 24px;
+    }
+        .info-container ul{
+            font-size: 14px;
+            margin-left: -20px;
+            margin-right: 60px;
+        }
+    
+    .main-box .container h2{
+        font-size: 24px;
+        margin-top: 33px;
+    }
+    .main-box .container .nav-bar .list ul li{
+        padding-right: 23px;
+        padding-bottom: 20px;
+        font-size: 14px;
+    }
+    .main-box .container .nav-bar .list ul{
+        margin-top: 12px;
+    }
+    .section-container{}
+    p{
+
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .info-container h2{
+        font-size: 16px;
+    }
+
+    .main-box .container .nav-bar{
+        padding: 0;
+        margin: 0;
+        
+    }
+    .about-section{
+        display: none;
+    }
+    
+    .about-section-mobile .about-image-image-block-text {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .about-section-mobile .about-image-block-column2{
+        width: 331px;
+        
+    }
+    .about-image-block{
+        
+        width: 100%;
+
+    }
+    .about-image-block-column1{
+        display: block;
+    }
+    .about-first-row {
+        display: block;
+        
+    }
+    .about-second-row {
+        display: block;
+        height: 42%;
+        
+    }
+    .main-box .container .nav-bar{
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+
+    }
+    .contact-info{
+        display: none;
+        margin-top: 66PX;
+    }
+
+    .contact-info-mobile{
+        display: block;
+        margin-right: 0;
+        margin-bottom: -30px;
+    }
+     .info-container .text-info{
+        display: block;
+        
+    }
+    .high-info{
+        display: flex;
+    }
+
+     .info-container .text-info .adress{
+        margin-left: 0;
+        margin-right: 20px;
+        
+    }
+     .info-container .text-info .menu{
+        margin-right: 0;
+        padding-top: 1px;
+        
+    }
+
+    .info-container .text-info .menu h2{
+        margin: 0;
+         margin-left: 40px;
+    }
+     .info-container .text-info .social-links{
+        margin-right: 0;
+        margin-top: 3px;
+        
+        }
+        a.phone-number{
+            font-size: 14px;
+            font-weight: 700;
+        }
+        #photo-card{
+            margin-right: 5%;
+        }
+        .form-info{
+            /* background-color: #1B2251; */
+            color: #FFFFFF;
+            padding: 20px 0px 0 20px;
+            width: fit-content;
+            height: fit-content;
+            flex: 1 10 auto;
+            margin-bottom: 30px;
+            min-width: 10px;
+        }
+            .form-button{
+                font-family: Inika;
+                background-color: #E0CE57;
+                width: 90% ;
+                display: grid;
+                color: #fff;
+                padding: 20px 0 20px 20px;
+                border-radius:12px ;
+                text-align: center;
+                border: none;
+                cursor: pointer;
+               
+                
+            }
+        
+        .upper-form-info{
+            margin-top: -20px;
+            margin-bottom:  -20px;
+            height: 7vh;
+        }
+        .upper-form-info p{
+            width: 100%;
+            margin: 0;
+        }
+        .form-blocks-container{
+            margin-bottom: -15px;
+        }
+        .jewerly-container{
+            gap: 10px;
+        }
+        .jewerly-card{
+            margin-bottom: 30px;
+        }
+        .jewerly-card{
+        width: 161px;
+        height: 155px;
+        font-size: 14px;
+        line-height: 18px;
+        align-items: center;
+    }
+    .jewerly-info-yellow p, .jewerly-info p{
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        
+    }
+    .jewerly-info-yellow, .jewerly-info{
+        height: 37px;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 8px 0 10px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .jewerly-info-yellow .arrow-right-direction{
+        border-radius: 50px;
+        padding: 6px 8px 6px 8px;
+        height: 10px;
+        background-color: #3546BA;
+        margin-top: 5px;       
+    }.jewerly-info .arrow-right-direction{
+        border-radius: 50px;
+        padding: 6px 8px 6px 8px;
+        height: 10px;
+        background-color: #3546BA;
+        margin-top: 5px;
+      
+    }
+    .jewerly-img img{
+        border-bottom-right-radius: 6px;
+       height: 150px;
+      
+        border-bottom-left-radius: 6px;
+       
+    } 
+}
+@media(max-width:525px){
+    .about-section-mobile .about-block {
+        margin-bottom: 0px;
+        width: 100%;
+    }
+    .about-second-row {
+        display: block;
+        height: 43%;
+        
+    }
+    .about-section-mobile .silver-medal-img{
+        margin-top: -5px;
+        width: 100%;
+        height: 316px;
+    }
+    .photo-card-text-info{
+        height: 243px;
+    }
+    .photo-card-text-info-2{
+        height: 243px;
+    }
+}
+
+@media(max-width:400px){
+    .main-box .container .nav-bar{
+    width: 100%;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border-radius: 0;
+}
+    .main-box .container .nav-bar .list ul li{
+        padding-right: 15px;
+        margin-left: 0;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .about-second-row {
+        display: block;
+        height: 50%;
+        
+    }
+}
+

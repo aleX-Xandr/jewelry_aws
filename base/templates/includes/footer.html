@@ -1,0 +1,85 @@
+<footer class="contact-info">
+    <div class="info-container">
+        <div class="text-info">
+            <div class="adress">
+
+                <ul>
+                    <li><h2>Address</h2></li>
+                    {% for address in settings.get_address %}
+                    <li>{{address}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu">
+                <h2 style="text-align: left;; margin: 0 0 0 37px;">Menu</h2>
+                <div style="display: flex;" class="menu-list">
+                    <ul>
+                        <li><a style=" color: #3546BA;text-decoration: underline;" href="">Home</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Collezioni</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Chi-Siamo</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Contatti</a></li>
+                    </ul>
+                    <ul>
+                        <li>Collezioni & Idee regalo</li>
+                        <li>Novità (Soon)</li>
+                        <li>Bomboniere (Soon)</li>
+                        <li>Resi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <h2>Social-links</h2>
+                <div class="social-icons">
+                    {% for social in socials %}
+                    <a href="{{social.link}}"><img src="{{social.icon.url}}" alt=""></a>
+                    {% endfor %}
+                </div>
+                <p style=" color: #4A4A4A;">{{settings.footer_copyright}}</p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<footer class="contact-info-mobile">
+    <div class="info-container">
+        <div class="text-info">
+            <div class="high-info">
+                <div class="adress">
+                    <ul>
+                        <li><h2>Address</h2></li>
+                        {% for address in settings.get_address %}
+                        <li>{{address}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <h2>Social-links</h2>
+                    <div class="social-icons">
+                        {% for social in socials %}
+                        <a href="{{social.link}}"><img src="{{social.icon.url}}" alt=""></a>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="menu">
+                <h2 style="text-align: left;; margin: 10px 0px 0 20px;">Menu</h2>
+                <div style="display: flex;" class="menu-list">
+                    <ul>
+                        <li><a style=" color: #3546BA;text-decoration: underline;" href="">Home</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Collezioni</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Chi-Siamo</a></li>
+                        <li><a style="color:#4A4A4A ;" href="#">Contatti</a></li>
+                    </ul>
+                    <ul>
+                        <li>Collezioni & Idee regalo</li>
+                        <li>Novità (Soon)</li>
+                        <li>Bomboniere (Soon)</li>
+                        <li>Resi</li>
+                    </ul>
+                </div>
+                <p style=" color: #4A4A4A; text-align: left;margin-left: 19px;padding-bottom: 21px;">{{settings.footer_copyright}}</p>
+            </div>
+        </div>
+    </div>
+</footer>

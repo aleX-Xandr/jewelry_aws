@@ -5,12 +5,17 @@ from base.models import ContactRequest, Contact, Page, AboutImage
 
 def about_us(request):
     images = AboutImage.objects.filter()
+
+    first_block = images[:3]
+    second_block = images[3:]
+
     page = get_object_or_404(Page, slug='about')
     context = {
         "page": page,
-        "images": images,
+        "first_block": first_block,
+        "second_block": second_block,
     }
-    pass
+    return render(request, 'about.html', context=context)
 
 
 def contact(request):
@@ -20,7 +25,7 @@ def contact(request):
         "contacts": contacts,
         "page": page,
     }
-    pass
+    return render(request, 'contacts.html', context=context)
 
 
 def contact_request(request):

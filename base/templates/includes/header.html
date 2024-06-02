@@ -1,0 +1,24 @@
+{% load static %}
+<div class="main-box">
+    <div class="container">
+        <header class="nav-bar">
+            <div class="basket-img"><a href="#"><img src="{% static 'img/baskett.svg' %}" alt=""></a>
+                <p class="basket-number">15</p>
+            </div>
+            <div class="image">
+                <img src="{% static 'img/nav-img.png' %}" alt="">
+            </div>
+            <div  class="line"><img src="{% static 'img/nav-bar-line.svg' %}" alt=""></div>
+            <div class="list">
+                <ul >
+                    <li {% if page.slug == 'index' %}id="active-link"{% endif %}><a href="#">Home</a></li>
+                    <li {% if page.slug == 'catalog' %}id="active-link"{% endif %}><a href="#"> Collezioni </a></li>
+                    <li {% if page.slug == 'about' %}id="active-link"{% endif %}><a href="{% url 'about_us' %}"> Chi-Siamo</a></li>
+                    <li {% if page.slug == 'contact' %}id="active-link"{% endif %}><a href="{% url 'contact' %}">Contatti</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <h2 class="nav-title">Contatti</h2>
+    </div>
+ </div>

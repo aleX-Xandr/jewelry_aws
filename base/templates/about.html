@@ -1,0 +1,81 @@
+{% extends 'includes/base.html' %}
+
+{% block 'content' %}
+ <section class="about-section">
+	<div class="about-block">
+		<div class="about-first-row">
+			<div class="about-text-block">
+				{{page.text|safe}}
+			</div>
+			<div class="about-image-block">
+				<div class="about-image-block-column1">
+					<div class="about-image-image-block">
+						<img src="{{first_block.0.image.url}}" alt="">
+						<div class="about-image-image-block-text">
+							{{first_block.0.name}}
+						</div>
+					</div>
+					<div class="about-image-image-block ">
+						<img class="silver-medal-img" src="{{first_block.1.image.url}}" alt="">
+						<div class="about-image-image-block-text">
+							{{first_block.1.name}}
+						</div>
+					</div>
+				</div>
+				<div class="about-image-block-column2">
+					<div class="about-image-image-block">
+						<img src="{{first_block.2.image.url}}" alt="">
+						<div class="about-image-image-block-text">
+							{{first_block.2.name}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about-second-row">
+			{% for image in second_block %}
+			<div class="about-image-image-block">
+				<img src="{{image.image.url}}" alt="">
+				<div class="about-image-image-block-text">
+					{{image.name}}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+<section class="about-section-mobile">
+
+	<div class="about-block">
+		<div class="about-first-row">
+			<div class="about-text-block">
+				<div class="about-image-image-block">
+					<img src="{{first_block.0.image.url}}" alt="">
+					<div class="about-image-image-block-text">
+						{{first_block.0.name}}
+					</div>
+				</div>
+				{{page.text|safe}}
+			</div>
+			<div class="about-image-image-block">
+				<img src="{{first_block.1.image.url}}" alt="">
+				<div class="about-image-image-block-text">
+					{{first_block.1.name}}
+				</div>
+			</div>
+			<div class="about-image-block">
+				<div class="about-image-block-column1">
+				</div>
+				<div class="about-image-block-column2">
+					<div class="about-image-image-block">
+						<img src="{{first_block.2.image.url}}" alt="">
+						<div class="about-image-image-block-text">
+							{{first_block.2.name}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
