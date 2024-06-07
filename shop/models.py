@@ -18,7 +18,7 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
-    category = models.ForeignKey('Category', on_delete=models.PROTECT)
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, related_name='products')
     slug = models.CharField('Slug', max_length=100)
     name = models.CharField('Name', max_length=50)
     description = models.TextField('Description')

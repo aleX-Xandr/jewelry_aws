@@ -2,13 +2,15 @@
 {% load static %}
 
 {% block 'content' %}
+<h2 class="nav-title">Contatti</h2>
+
 <section class="section">
     <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
-    <section-container class="section-container">
+    <div class="section-container">
 
         <div class="photo-cards">
             {% for contact in contacts %}
-            <div class="photo-card" id="photo-card">
+            <div class="photo-card">
                 <div class="position-img">
                     <img src="{{contact.image.url}}" alt="">
                 </div>
@@ -62,16 +64,13 @@
                     <form action="{% url 'contact_request' %}" method="POST" class="form">
                         {% csrf_token %}
                         <div class="form-group">
-                            <input id="name" type="text" class="from-input" name="name" placeholder="">
-                            <label for="name" class="form-label">Name</label>
+                            <input id="name" type="text" class="from-input" name="name" placeholder="Name*">
                         </div>
                         <div class="form-group">
-                            <input id="email" type="email" class="from-input" name="email" placeholder="">
-                            <label for="email" class="form-label">Email</label>
+                            <input id="email" type="email" class="from-input" name="email" placeholder="Email">
                         </div>
                         <div id="message-form" class="form-group">
-                            <input id="login" type="text" class="from-input" name="message" placeholder="">
-                            <label for="login" class="form-label">Message</label>
+                            <input id="login" type="text" class="from-input" name="message" placeholder="Message">
                         </div>
                         <button type="submit" class="form-button">Send</button>
                     </form>
@@ -79,6 +78,6 @@
             </div>
            </div>
 
-    </section-container>
+    </div>
 </section>
 {% endblock %}

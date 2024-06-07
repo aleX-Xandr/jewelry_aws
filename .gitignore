@@ -4,3 +4,4 @@
 /static/vendor
 /static/ckeditor
 /.env
+/sftp-config.json
