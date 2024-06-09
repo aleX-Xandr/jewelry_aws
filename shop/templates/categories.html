@@ -1,0 +1,93 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<h2 class="nav-title">Collezioni</h2>
+
+<div class="catalog-jewerly">
+    <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
+    <div class="jewerly-container">
+        {% for category in categories %}
+        <div class="jewerly-card">
+            {% if not forloop.counter|divisibleby:2 %}
+            <div class="jewerly-info-yellow">
+            {% else %}
+            <div  class="jewerly-info">
+            {% endif %}
+                <p>{{category.name}}</p>
+                <a href="{% url 'category' slug=category.slug %}">
+                    <img class="arrow-right-direction" src="{% static 'img/arrow-right-direction.svg' %}" alt="">
+                </a>
+            </div>
+            <div class="jewerly-img">
+                <img src="{{category.image.url}}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="order-window">
+   <div class="order-window-container">
+        <div class="order-info">
+            <p class="order-info-title">Un Regalo personalizzato.</p>
+            <div class="order-info-desc">
+                <p>Scegli il disegno che accompagna il tuo nome,</p>
+                <p>le pietre, la dimensione eil colore del gioiello:</p>
+                <p>dorato, rodiato o rosè.</p>
+            </div>
+            <div class="order-info-lower-desc">
+                <div class="order-info-lower-desc-line"></div>
+                <p>Gioiello interamente traforato a mano su lastre di argento</p>
+                <p>925°/00 di oltre un millimetro di spessore e non laserato.</p>
+            </div>
+            <div class="order-info-button">
+                <button class="button-order" type="submit">Scrivici</button>
+                <p> A partire da <a href="#">45.00 Euro</a></p>
+            </div>
+        </div>
+        <div class="order-imgs">
+          <div class="order-imgs-container">
+              <img class="order-info-img-1" src="{% static 'img/order-info-img-1.jpg' %}" alt="">
+          </div>
+          <div class="order-imgs-container">
+              <img class="order-info-img-2" src="{% static 'img/order-info-img-2.jpg' %}" alt="">
+          </div>
+          <div class="order-imgs-container">
+              <img class="order-info-img-3" src="{% static 'img/order-info-img-3.jpg' %}" alt="">
+          </div>
+          <div class="order-imgs-container">
+              <img class="order-info-img-4" src="{% static 'img/order-info-img-3.jpg' %}" alt="">
+          </div>
+        </div>
+   </div>
+</div>
+<div class="order-window-mobile">
+    <div class="order-window-container">
+        <div class="order-imgs">
+           <div class="order-imgs-container"> <img class="order-info-img-1" src="{% static 'img/order-info-img-1.jpg' %}" alt=""></div>
+           <div class="order-imgs-container"> <img class="order-info-img-2" src="{% static 'img/order-info-img-2.jpg' %}" alt=""></div>
+           <div class="order-imgs-container"> <img class="order-info-img-3" src="{% static 'img/order-info-img-3.jpg' %}" alt=""></div>
+           <div class="order-imgs-container"> <img class="order-info-img-4" src="{% static 'img/order-info-img-3.jpg' %}" alt="">   </div>
+        </div>
+        <div class="order-info">
+             <p class="order-info-title">Un Regalo personalizzato.</p>
+             <div class="order-info-desc">
+                 <p>Scegli il disegno che accompagna il tuo nome, le pietre, la dimensione eil colore del gioiello:
+                    dorato, rodiato o rosè.
+                 </p>
+
+             </div>
+             <div class="order-info-lower-desc">
+                 <div class="order-info-lower-desc-line"></div>
+                 <p>Gioiello interamente traforato a mano su lastre di argento 925°/00 di oltre un</p>
+                 <p> millimetro di spessore e non laserato.</p>
+             </div>
+             <div class="order-info-button">
+                 <button class="button-order" type="submit">Scrivici</button>
+                 <p class="price"> A partire da <a href="#">45.00 Euro</a></p>
+             </div>
+         </div>
+
+    </div>
+</div>
+{% endblock %}

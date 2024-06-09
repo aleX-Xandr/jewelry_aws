@@ -12,7 +12,7 @@
             <div class="list">
                 <ul >
                     <li {% if page.slug == 'index' %}id="active-link"{% endif %}><a href="#">Home</a></li>
-                    <li {% if page.slug == 'catalog' %}id="active-link"{% endif %}><a href="#"> Collezioni </a></li>
+                    <li {% if page.slug == 'catalog' %}id="active-link"{% endif %}><a href="{% url 'categories' %}"> Collezioni </a></li>
                     <li {% if page.slug == 'about' %}id="active-link"{% endif %}><a href="{% url 'about_us' %}"> Chi-Siamo</a></li>
                     <li {% if page.slug == 'contact' %}id="active-link"{% endif %}><a href="{% url 'contact' %}">Contatti</a></li>
                 </ul>

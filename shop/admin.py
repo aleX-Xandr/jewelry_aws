@@ -15,12 +15,13 @@ class ProductImageInlineAdmin(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'quantity']
-    list_editable = ['quantity']
+    list_display = ['name', 'description', 'quantity', 'sort']
+    list_editable = ['quantity', 'sort']
 
     inlines = [ProductImageInlineAdmin]
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'sort']
+    list_editable = ['sort']

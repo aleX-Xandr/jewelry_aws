@@ -12,22 +12,22 @@ def categories(request):
         "categories": categories,
         "page": page,
     }
-    return
+    return render(request, "categories.html", context=context)
 
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = category.products.all()
 
-    p = Paginator(products, 12)
+    p = Paginator(products, 1)
     page_num = request.GET.get('page', 1)
     page = p.page(page_num)
 
     context = {
         "category": category,
-        "products": page,
+        "page": page,
     }
-    return
+    return render(request, 'products.html', context=context)
 
 
 def product(request, slug):

@@ -9,9 +9,12 @@ class Category(BaseModel):
     name = models.CharField('Name', max_length=50)
     image = models.ImageField('Image', upload_to='category_images')
 
+    sort = models.IntegerField('Sort', default=0)
+
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+        ordering = ['sort']
 
     def __str__(self):
         return self.name
@@ -29,9 +32,12 @@ class Product(BaseModel):
     materials = models.ManyToManyField('Material', blank=True)
     quantity = models.IntegerField('Quantity', default=0)
 
+    sort = models.IntegerField('Sort', default=0)
+
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+        ordering = ['sort']
 
     def __str__(self):
         return self.name
