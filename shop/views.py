@@ -38,4 +38,4 @@ def product(request, slug):
         "product": product,
         "recommend_products": recommend_products,
     }
-    return
+    return render(request, 'product.html', context=context)

@@ -14,14 +14,16 @@
             {% else %}
             <div  class="jewerly-info">
             {% endif %}
-                <p>{{category.name}}</p>
+                <p><a href="{% url 'category' slug=category.slug %}">{{category.name}}</a></p>
                 <a href="{% url 'category' slug=category.slug %}">
                     <img class="arrow-right-direction" src="{% static 'img/arrow-right-direction.svg' %}" alt="">
                 </a>
             </div>
-            <div class="jewerly-img">
-                <img src="{{category.image.url}}" alt="">
-            </div>
+            <a href="{% url 'category' slug=category.slug %}">
+                <div class="jewerly-img">
+                    <img src="{{category.image.url}}" alt="">
+                </div>
+            </a>
         </div>
         {% endfor %}
     </div>

@@ -9,15 +9,15 @@
     {% for product in page %}
     <div class="selection-card">
         <div class="selection-img">
-            <a href="#"><img src="{{product.preview.url}}" alt=""></a>
+            <a href="{% url 'product' slug=product.slug %}"><img src="{{product.preview.url}}" alt=""></a>
         </div>
         <div class="selection-info">
             <div class="selection-text">
-                <a href="#"><p>{{product.name}}</p></a>
+                <a href="{% url 'product' slug=product.slug %}"><p>{{product.name}}</p></a>
             </div>
             <div class="selection-btn-price">
                 <button type="submit">Buy Now</button>
-                <a href="#">€{{product.price}}</a>
+                <a href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
             </div>
         </div>
     </div>
@@ -33,10 +33,10 @@
         </div>
         <div class="selection-info">
             <div class="selection-text">
-                <a href="#"><p>{{product.name}}</p></a>
+                <a href="{% url 'product' slug=product.slug %}"><p>{{product.name}}</p></a>
             </div>
             <div class="selection-btn-price">
-                <a href="#">€{{product.price}}</a>
+                <a href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
                 <button>Buy Now</button>
             </div>
         </div>
@@ -46,9 +46,17 @@
 
 <div class="number-icons">
     {% if page.has_previous %}
-        <div class="arrow-left-direction">
-            <img src="{% static 'img/arrow-left-direction.svg' %}" alt="">
-        </div>
+        <a class="arrow-left-direction-a" href="?page={{page.previous_page_number}}">
+            <div class="arrow-left-direction">
+                <img src="{% static 'img/arrow-left-direction.svg' %}" alt="">
+            </div>
+        </a>
+    {% else %}
+        <a class="arrow-left-direction-a" href="#" style="opacity: 0;">
+            <div class="arrow-left-direction">
+                <img src="{% static 'img/arrow-left-direction.svg' %}" alt="">
+            </div>
+        </a>
     {% endif %}
     <div class="one-two-three-four-icons">
         {% if page.has_previous %}
@@ -75,9 +83,17 @@
         {% endif %}
     </div>
     {% if page.has_next %}
-        <div class="arrow-right-direction">
-            <img src="{% static 'img/arrow-right-direction.svg' %}" alt="">
-        </div>
+        <a class="arrow-right-direction-a" href="?page={{page.next_page_number}}">
+            <div class="arrow-right-direction">
+                <img src="{% static 'img/arrow-right-direction.svg' %}" alt="">
+            </div>
+        </a>
+    {% else %}
+        <a class="arrow-right-direction-a" href="#" style="opacity: 0;">
+            <div class="arrow-right-direction">
+                <img src="{% static 'img/arrow-right-direction.svg' %}" alt="">
+            </div>
+        </a>
     {% endif %}
 </div>
 {% endblock %}

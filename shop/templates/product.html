@@ -1,0 +1,56 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<div class="settings-card">
+    <div class="setting-container">
+        <div class="setting-left">
+            <div class="setting-text">
+                <a href="#">Home </a>
+                <p> / {{product.name}}</p>
+            </div>
+            <div class="big-image-container">
+                <img id="largeImage" src="{{product.preview.url}}" alt="Large Image">
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="{{product.preview.url}}" alt="Small Image 1" data-large-src="{{product.preview.url}}">
+                {% for image in product.images.all %}
+                <img class="thumbnail" src="{{image.url}}" alt="Small Image 2" data-large-src="{{image.url}}">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="setting-right">
+            <img class="setting-border-line" src="{% static 'img/right-setting-line.svg' %}" alt="">
+            <div class="color-container">
+                <p id="gold-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
+                <p id="silver-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
+                <p id="bronze-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
+                <p class="choose-metal">choose metal</p>
+            </div>
+            <h3 class="right-settings-title">{{product.name}}</h3>
+            <div class="right-settings-text">
+                <p>{{product.description}}</p>
+            </div>
+            <div class="settings-price">
+                <a href="#">€{{product.price}}</a>
+            </div>
+            <div class="settings-amount">
+                <div class="minus-plus">
+                    <button id="decrement" href="#">-</button>
+                    <input type="text" id="quantity" name="quantity" value="0" readonly>
+                    <button id="increment" href="#">+</button>
+                </div>
+                <p class="text-minus-plus">quantità</p>
+            </div>
+            <button class="buy-now">Buy Now</button>
+        </div>
+        <div class="navigation-links">
+            <a href="#"> &#10094;</a>
+            <a href="#">Indietro</a>
+
+            <a href="#">Avanti</a>
+            <a href="#">&#10095;</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
