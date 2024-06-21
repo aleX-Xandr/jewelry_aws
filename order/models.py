@@ -14,7 +14,13 @@ class Order(BaseModel):
     def __str__(self):
         return f"{self.id}"
 
-    def get_product_count(self):
+    def get_price(self):
+        sum = 0
+        for product in self.products.all():
+            sum += product.get_price()
+        return sum
+
+    def get_count(self):
         count = 0
         for product in self.products.all():
             count += product.quantity
@@ -32,3 +38,6 @@ class OrderProduct(BaseModel):
 
     def __str__(self):
         return f'{self.product.name} x {self.quantity}'
+
+    def get_price(self):
+        return self.product.price * self.quantity

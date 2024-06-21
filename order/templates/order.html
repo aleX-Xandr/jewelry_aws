@@ -2,180 +2,54 @@
 {% load static %}
 
 {% block 'content' %}
- <h2 class="carrello">Carrello</h2>
- <div class="bin">
-
-        <div class="bin-card-container">
-
-            <div class="bin-card-container-container">
-                <div id="bin-card-st" class="bin-card">
-                    <h5>Il mio carrello</h5>
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="bin-card">
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="bin-card">
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="bin-card">
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="bin-card">
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="bin-card">
-                    <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                    <a href="#">
-                        <div class="bin-img">
-                            <img class="bin-img-img" src="static/img/bin-img.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="bin-info">
-                        <div class="bin-text">
-                            <a href="#"><p>Amorino Orecchini </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                            <a class="bin-price" href="#">€70.00</a>
-                        </div>
-                        <div class="settings-amount bin">
-                            <div class="minus-plus">
-                                <button class="decrement" href="#">-</button>
-                                <input type="text" class="numberInput" value="0" readonly>
-                                <button class="increment" href="#">+</button>
-                            </div>
-
-                        </div>
-                    </div>
+     <h2 class="carrello">Carrello</h2>
+     <div class="bin">
+        
+            <div class="bin-card-container main">
+                
+                <div class="bin-card-container-container  main">
+                    {% for product in order.products.all %}
+                    {% include 'includes/order_card.html' %}
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-        <div class="payment">
-            <h5>Riepilogo ordine</h5>
-            <div class="-sub-total">
-                <div class="subtotal">
-                    <div class="subtotal-text">
-                        <p>Subtotale:</p>
+            <div class="payment">
+                <h5>Riepilogo ordine</h5>
+                <div class="-sub-total">
+                    <div class="subtotal">
+                        <div class="payment-price">
+                            <a href="#">€{{order.get_price}}</a>
+                        </div>
                     </div>
-                    <div class="payment-price">
-                        <a href="#">€1.003,00</a>
-                    </div>
-                </div>
-                <div  class="line"><img src="static/img/nav-bar-line.svg" alt=""></div>
-                <div class="total">
-                    <div class="total-text">
-                        <p>Totale</p>
-                        <p class="total-two">IVA inclusa</p>
-                    </div>
-                    <div class="payment-price">
-                        <a href="#">€1.003,00</a>
+                    <div  class="line"><img src="{% static 'img/nav-bar-line.svg' %}" alt=""></div>
+                    <div class="total">
+                        <div class="total-text">
+                            <p>Totale</p>
+                            <p class="total-two">IVA inclusa</p>
+                        </div>
+                        <div class="payment-price">
+                            <a href="#">€{{order.get_price}}</a>
+                        </div>
                     </div>
                 </div>
+                <div class="buttons-container">
+                    <form class="checkout" action=""><a  href="#">Checkout</a></form>
+                   <form class="pay-pal-link" action="">
+                    <a href="#"><img class="pay-pal" src="{% static 'img/paypal.svg' %}" alt=""> <p>Checkout</p></a>
+                   </form>
+                </div>
+                <div class="input-one">
+                    <form action="">
+                        <input class="input-one-one" type="text" placeholder="Inserisci un codice promozionale">
+                        <a class="input-btn" href="#">Apply</a>
+                    </form>
+                    
+                </div>
+                <div class="input-two">
+                   <form action="">
+                    <input class="input-two-two" type="text" placeholder="Aggiungi una nota">
+                   </form>
+                </div>
             </div>
-            <div class="buttons-container">
-                <a class="checkout" href="#">Checkout</a>
-                <a class="pay-pal-link" href="#"><img class="pay-pal" src="static/img/paypal.svg" alt=""> <p>Checkout</p></a>
-            </div>
-            <div class="input-one">
-                <input class="input-one-one" type="text" placeholder="Inserisci un codice promozionale">
-                <a class="input-btn" href="#">Apply</a>
-            </div>
-            <div class="input-two">
-                <input class="input-two-two" type="text" placeholder="Aggiungi una nota">
-            </div>
-        </div>
- </div>
+     </div>
 {% endblock %}

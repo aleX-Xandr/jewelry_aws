@@ -4,7 +4,9 @@
         <header class="nav-bar">
             <div class="basket-img" id="btnBasket">
                 <img src="{% static 'img/baskett.svg' %}" alt="">
-                <p class="basket-number">15</p>
+                {% if order.get_count %}
+                <p class="basket-number">{{order.get_count}}</p>
+                {% endif %}
             </div>
             <div class="image">
                 <img src="{% static 'img/nav-img.png' %}" alt="">

@@ -12,7 +12,7 @@ def order(request):
     context = {
         "page": page,
     }
-    return
+    return render(request, 'order.html', context=context)
 
 
 def edit(request):
