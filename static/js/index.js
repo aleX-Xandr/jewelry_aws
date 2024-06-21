@@ -19,7 +19,6 @@ $(document).ready(function() {
     const overlay = $('#overlay');
     const btnCloseSidebar = $('#btnCloseSidebar');
     const increment = $('.increment');
-    const decrement = $('.decrement');
     
 
     const toggleSidebar = () => {
@@ -75,23 +74,4 @@ $(document).ready(function() {
     btnBasket.on('click', () => { toggleSidebar(); });
     btnCloseSidebar.on('click', () => { toggleSidebar(); });
     overlay.on('click', () => { toggleSidebar(); });
-
-    increment.each(function () {
-        let inc = $(this);
-        inc.on('click', () => {
-            let value = parseInt(inc.siblings('.numberInput').val(), 10);
-            inc.siblings('.numberInput').val(value + 1);
-        });
-    });
-
-    decrement.each(function () {
-        let dec = $(this);
-        dec.on('click', () => {
-            let value = parseInt(dec.siblings('.numberInput').val(), 10);
-            if (value > 0) {
-                dec.siblings('.numberInput').val(value - 1);
-            }
-        });
-    });
-       
 });   

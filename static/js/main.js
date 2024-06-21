@@ -30,7 +30,7 @@ $('.pagination').on('click', function() {
 });
 
 // Increment and decrement input value
-$('#increment').on('click', function() {
+$('.incrementProduct').on('click', function() {
     var value = parseInt($('#numberInput').val(), 10);
     $('#numberInput').val(value + 1);
     event.preventDefault();
@@ -40,11 +40,12 @@ $('.setting-amound').on('click', function(){
     $('.setting-amound').css('border:none;');
 });
 
-$('#decrement').on('click', function() {
+$('.decrementProduct').on('click', function() {
     var value = parseInt($('#numberInput').val(), 10);
-    if (value > 0) { 
+    if (value > 0) {
         $('#numberInput').val(value - 1);
     }
+    event.preventDefault();
 });
 
 // Breadcrumb click event

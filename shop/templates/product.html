@@ -35,14 +35,19 @@
                 <a href="#">€{{product.price}}</a>
             </div>
             <div class="settings-amount">
-                <div class="minus-plus">
-                    <button id="decrement" href="#">-</button>
-                    <input type="text" id="numberInput" name="quantity" value="0" readonly>
-                    <button id="increment" href="#">+</button>
-                </div>
-                <p class="text-minus-plus">quantità</p>
+                <form action="{% url 'order_edit' %}" method="GET">
+                    <div class="container-amount">
+                        <div class="minus-plus">
+                            <button id="decrement" class="decrementProduct" href="#">-</button>
+                            <input type="hidden" name="product_id" value="{{product.id}}">
+                            <input type="text" id="numberInput" name='quantity' value="0" readonly>
+                            <button id="increment" class="incrementProduct" href="#">+</button>
+                        </div>
+                        <p class="text-minus-plus">quantità</p>
+                    </div>
+                    <button type="submit" class="buy-now">Buy Now</button>
+                </form>
             </div>
-            <button type="submit" class="buy-now">Buy Now</button>
         </div>
         <div class="navigation-links">
             <a href="#"> &#10094;</a>

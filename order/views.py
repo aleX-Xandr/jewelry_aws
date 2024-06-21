@@ -19,7 +19,7 @@ def edit(request):
     order = order_service.get_order(request)
 
     product_id = request.GET.get('product_id')
-    quantity = request.GET.get('quantity')
+    quantity = int(request.GET.get('quantity'))
     if quantity < 0:
         return JsonResponse({"status": False, "message": "invalid_quantity"})
 
@@ -38,6 +38,7 @@ def edit(request):
             order=order,
             product=product,
             quantity=quantity)
+        check_product.save()
     else:
         check_product = check_product.first()
 
@@ -45,7 +46,7 @@ def edit(request):
             check_product.delete()
         else:
             check_product.quantity = quantity
-    check_product.save()
+            check_product.save()
     return redirect('order')
 
 
