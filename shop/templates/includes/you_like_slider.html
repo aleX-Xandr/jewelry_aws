@@ -1,0 +1,21 @@
+<div class="slider-container-container">
+    <h1 class="coming-soon">You may also like</h1>
+    <div class="slider-container">
+        <div class="slides" id="additionalSlider">
+            {% for product in products %}
+            <div>
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="{{product.preview.url}}" alt="">
+                    </div>
+                    <div class="slide-content">
+                        <a href="{% url 'product' slug=product.slug %}" class="title-link">{{product.name}}</a>
+                        <div class="slide-price">€{{product.price}}</div>
+                        <a href="{% url 'product' slug=product.slug %}" class="slide-product-link">See details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

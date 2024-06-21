@@ -1,0 +1,127 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<div class="presentosa">
+    <div class="presentosa-container">
+        <div class="slider-presentosa" id="sliderPresentosa">
+            {% for product in slide_products %}
+            <div>
+                <div class="presentosa-main">
+                    <div class="presentosa-left">
+                        <div class="presentosa-text">
+                            <h1>{{product.name}}</h1>
+                            <p>
+                                {{product.description}}
+                            </p>
+                        </div>
+                        <a class="presentosa-price" href="">€{{product.price}}</a>
+                        <a href="#" class="presentosa-button">Buy Now</a>
+                        <a class="presentosa-button-mobile">See More</a>
+                    </div>
+                    <div class="presentosa-right">
+                        <div class="presentosa-img">
+                            <img src="{{product.preview.url}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor  %}
+        </div>
+
+       <div class="presentosa-crumbs">
+            <a class="arrow-left-direction-a" href="#" id="sliderPresentosaPrev">
+                <div class="arrow-left-direction">
+                    <img src="{% static 'img/arrow-left-direction.svg' %}" alt="">
+                </div>
+            </a>
+            <div id="sliderPresentosaPagination"></div>
+            <a class="arrow-right-direction-a" href="#" id="sliderPresentosaNext">
+                <div class="arrow-right-direction">
+                    <img src="{% static 'img/arrow-right-direction.svg' %}" alt="">
+                </div>
+            </a>
+       </div>
+    </div>
+</div>
+<div class="collection">
+<h1>Collection</h1>
+    <div class="collection-container">
+        {% for product in collections %}
+        <a href="{% url 'product' slug=product.slug %}">
+            <div class="selection-card collection">
+                <div class="selection-img collection">
+                    <img src="{{product.preview.url}}" alt="">
+                </div>
+                <div class="selection-info collection">
+                    <div class="selection-text collection yellow">
+                        <a href="{% url 'product' slug=product.slug %}"><h2>{{product.name}}</h2></a>
+                        <a href="{% url 'product' slug=product.slug %}">
+                            <p class="section-main-text">
+                                {{product.description}}
+                            </p>
+                        </a>
+                    </div>
+                    <div class="selection-btn-price collection">
+                        <a href="{% url 'product' slug=product.slug %}"class="presentosa-button">Buy Now</a>
+                        <a href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="collection-container mobile">
+        {% for product in collections %}
+        <a href="{% url 'product' slug=product.slug %}">
+            <div class="selection-card collection">
+                <div class="selection-img collection">
+                    <img src="{{product.preview.url}}" alt="">
+                </div>
+                <div class="selection-info">
+                    <div class="selection-text collection yellow">
+                        <a href="{% url 'product' slug=product.slug %}"><h2>{{product.name}}</h2></a>
+                        <a href="{% url 'product' slug=product.slug %}">
+                            <p class="section-main-text">
+                                {{product.description}}
+                            </p>
+                        </a>
+                    </div>
+                    <div class="selection-btn-price collection">
+                        <a class="hundred-thirty" href="#">€{{product.price}}</a>
+                        <a href="{% url 'product' slug=product.slug %}" class="presentosa-button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<h1 class="coming-soon">Coming Soon</h1>
+<div class="slider-container announce-slider-container">
+    <div class="slides" id="announcesSlider">
+        {% for product in coming_soon %}
+        <div>
+            <div class="slide">
+                <img src="{{product.preview.url}}" alt="">
+                <div class="slide-text">
+                    <h3>{{product.name}}</h3>
+                    <p>
+                        {{product.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="slider-btn-prev" id="announcesSliderPrev"></button>
+    <button class="slider-btn-next" id="announcesSliderNext"></button>
+</div>
+<div id="announcesSliderPagination"></div>
+
+{% with you_like as products %}
+{% include "includes/you_like_slider.html" %}
+{% endwith %}
+
+{% endblock %}

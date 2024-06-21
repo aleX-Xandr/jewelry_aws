@@ -1,89 +1,97 @@
 $(document).ready(function() {
-    const $thumbnails = $('.thumbnail');
     const $largeImage = $('#largeImage');
-    const $elements = $('.setting-right-color');
     const $colorTicks = $('.color-tick');
-    const $buttons = $('button');
     const $jewerlyCard = $('.jewerly-card');
-    let currentIndex = 0;
     const $slides = $('.slides');
     const $slide = $('.slide');
     const totalSlides = $slide.length;
-
-    // Slider previous button
-    $('.prev').on('click', function() {
-        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-        updateSlider();
-    });
-
-    // Slider next button
-    $('.next').on('click', function() {
-        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-        updateSlider();
-    });
-
-    function updateSlider() {
-        $slides.css('transform', `translateX(-${currentIndex * 100}%)`);
-    }
-
-    // Thumbnail click event
-    $thumbnails.on('click', function() {
-        $thumbnails.css('filter', 'brightness(50%)');
-        $(this).css('filter', 'brightness(100%)');
-    });
-
-    // Setting-right-color click event
-    $elements.on('click', function() {
-        $elements.removeClass('with-border');
-        $(this).addClass('with-border');
-        $elements.removeClass('checked');
-        $(this).addClass('checked'); 
-    });
-
+    const announcesSlider = $('#announcesSlider');
+    const announcesSliderPrev = $('#announcesSliderPrev');
+    const announcesSliderNext = $('#announcesSliderNext');
+    const announcesSliderPagination = $('#announcesSliderPagination');
+    const additionalSlider = $('#additionalSlider');
+    const sliderPresentosa = $('#sliderPresentosa');
+    const sliderPresentosaPrev = $('#sliderPresentosaPrev');
+    const sliderPresentosaNext = $('#sliderPresentosaNext');
+    const sliderPresentosaPagination = $('#sliderPresentosaPagination');
+    const sidebarPanel = $('#sidebarPanel');
+    const btnBasket = $('#btnBasket');
+    const overlay = $('#overlay');
+    const btnCloseSidebar = $('#btnCloseSidebar');
+    const increment = $('.increment');
+    const decrement = $('.decrement');
     
 
-    // Button click event
-    $buttons.on('click', function() {
-        console.log('button clicked');
+    const toggleSidebar = () => {
+        sidebarPanel.hasClass('show') ? sidebarPanel.removeClass('show') : sidebarPanel.addClass('show');
+        overlay.hasClass('show') ? overlay.removeClass('show') : overlay.addClass('show');
+    };
+
+    announcesSlider.slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        dotsClass: 'breadcrumbs slider-soon',
+        appendDots: announcesSliderPagination,
+        prevArrow: announcesSliderPrev,
+        nextArrow: announcesSliderNext,
+        centerMode: true,
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 660,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
-    // Pagination click event
-    $('.pagination').on('click', function() {
-        $('.pagination').removeClass('activePagination');
-        $(this).addClass('activePagination');
+    additionalSlider.slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        centerMode: true,
+        variableWidth: true,
     });
 
-    // Increment and decrement input value
-    $('#increment').on('click', function() {
-        var value = parseInt($('#numberInput').val(), 10);
-        $('#numberInput').val(value + 1);
+    sliderPresentosa.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        dotsClass: 'breadcrumbs',
+        appendDots: sliderPresentosaPagination,
+        prevArrow: sliderPresentosaPrev,
+        nextArrow: sliderPresentosaNext,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
     });
 
-    $('#decrement').on('click', function() {
-        var value = parseInt($('#numberInput').val(), 10);
-        if (value > 0) { 
-            $('#numberInput').val(value - 1);
-        }
+    btnBasket.on('click', () => { toggleSidebar(); });
+    btnCloseSidebar.on('click', () => { toggleSidebar(); });
+    overlay.on('click', () => { toggleSidebar(); });
+
+    increment.each(function () {
+        let inc = $(this);
+        inc.on('click', () => {
+            let value = parseInt(inc.siblings('.numberInput').val(), 10);
+            inc.siblings('.numberInput').val(value + 1);
+        });
     });
 
-    // Breadcrumb click event
-    $('.breadcrumb').on('click', function() {
-        $('.breadcrumb').removeClass('active');
-        $(this).addClass('active');
+    decrement.each(function () {
+        let dec = $(this);
+        dec.on('click', () => {
+            let value = parseInt(dec.siblings('.numberInput').val(), 10);
+            if (value > 0) {
+                dec.siblings('.numberInput').val(value - 1);
+            }
+        });
     });
-
-    // Additional slider controls
-    $('.prevo').on('click', function() {
-        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-        updateSlider50();
-    });
-
-    $('.nexto').on('click', function() {
-        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-        updateSlider50();
-    });
-
-    function updateSlider50() {
-        $slides.css('transform', `translateX(-${currentIndex * 50}%)`);
-    }
-});
+       
+});   
