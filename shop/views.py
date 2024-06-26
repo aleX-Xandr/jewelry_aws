@@ -19,7 +19,7 @@ def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = category.products.all()
 
-    p = Paginator(products, 1)
+    p = Paginator(products, 12)
     page_num = request.GET.get('page', 1)
     page = p.page(page_num)
 
@@ -39,3 +39,7 @@ def product(request, slug):
         "recommend_products": recommend_products,
     }
     return render(request, 'product.html', context=context)
+
+
+def constructor(request):
+    pass

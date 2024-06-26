@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 from base.models import Page
+from base.service import back
 from order.models import OrderProduct
 from order.service import order_service
 from shop.models import Product
@@ -20,8 +21,6 @@ def edit(request):
 
     product_id = request.GET.get('product_id')
     quantity = int(request.GET.get('quantity'))
-    if quantity < 0:
-        return JsonResponse({"status": False, "message": "invalid_quantity"})
 
     product = Product.objects.filter(id=product_id)
     if not product:
@@ -30,10 +29,14 @@ def edit(request):
         product = product.first()
 
     if quantity > product.quantity:
-        return JsonResponse({"status": False, "message": "invalid_quantity"})
+        quantity = product.quantity
+        # return JsonResponse({"status": False, "message": "invalid_quantity"})
 
     check_product = order.products.filter(product=product)
     if not check_product:
+        if quantity <= 0:
+            return redirect(back(request))
+
         check_product = OrderProduct(
             order=order,
             product=product,

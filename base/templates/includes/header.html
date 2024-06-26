@@ -13,10 +13,11 @@
             </div>
             <div  class="line"><img src="{% static 'img/nav-bar-line.svg' %}" alt=""></div>
             <div class="list">
-                <ul >
+                <ul>
                     <li {% if page.slug == 'index' %}class="active-link"{% endif %}><a href="{% url 'index' %}">Home</a></li>
                     <li {% if page.slug == 'categories' or not page.slug %}class="active-link"{% endif %}><a href="{% url 'categories' %}"> Collezioni </a></li>
                     <li {% if page.slug == 'about' %}class="active-link"{% endif %}><a href="{% url 'about_us' %}"> Chi-Siamo</a></li>
+                    <li {% if page.slug == 'constructor' %}class="active-link"{% endif %}><a href="{% url 'constructor' %}">Constructor</a></li>
                     <li {% if page.slug == 'contact' %}class="active-link"{% endif %}><a href="{% url 'contact' %}">Contatti</a></li>
                 </ul>
             </div>

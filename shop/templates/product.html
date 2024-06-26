@@ -5,11 +5,12 @@
 <div class="settings-card">
     <div class="setting-container">
         <div class="setting-left">
-            <div class="setting-text">
-                <a href="#">Home </a>
-                <p> / {{product.name}}</p>
-            </div>
             <div class="big-image-container">
+                <div class="setting-text">
+                    <a class="setting-link-home" href="{% url 'index' %}">Home </a>
+                    <p> / {{product.name}}</p>
+                </div>
+
                 <img id="largeImage" src="{{product.preview.url}}" alt="Large Image">
             </div>
             <div class="thumbnail-container">
@@ -40,7 +41,7 @@
                         <div class="minus-plus">
                             <button id="decrement" class="decrementProduct" href="#">-</button>
                             <input type="hidden" name="product_id" value="{{product.id}}">
-                            <input type="text" id="numberInput" name='quantity' value="0" readonly>
+                            <input type="text" id="numberInput" name='quantity' value="0" min="0" max="{{product.quantity}}" readonly required>
                             <button id="increment" class="incrementProduct" href="#">+</button>
                         </div>
                         <p class="text-minus-plus">quantità</p>

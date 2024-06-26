@@ -15,8 +15,8 @@
                                 {{product.description}}
                             </p>
                         </div>
-                        <a class="presentosa-price" href="">€{{product.price}}</a>
-                        <a href="#" class="presentosa-button">Buy Now</a>
+                        <a class="presentosa-price" href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
+                        <a href="{% url 'product' slug=product.slug %}" class="presentosa-button">Buy Now</a>
                         <a class="presentosa-button-mobile">See More</a>
                     </div>
                     <div class="presentosa-right">
@@ -104,7 +104,9 @@
         {% for product in coming_soon %}
         <div>
             <div class="slide coming-soon">
-                <img src="{{product.preview.url}}" alt="">
+                <div class="coming-soon-img">
+                    <img class="coming-soon-img-img" src="{{product.preview.url}}" alt="">
+                </div>
                 <div class="slide-text">
                     <h3>{{product.name}}</h3>
                     <p>

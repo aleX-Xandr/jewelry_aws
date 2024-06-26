@@ -803,6 +803,7 @@ ul li {
     display: flex;
     padding: 0 0 0 10px;
     font-family: Inika;
+    align-items: center;
 }
 
 .order-info-button a {
@@ -815,6 +816,7 @@ ul li {
 
 .order-info-button p {
     font-family: Inika;
+    width: 68%;
 }
 
 .order-button {
@@ -832,9 +834,11 @@ ul li {
     text-align: center;
     border: none;
     cursor: pointer;
-    margin: 1px 33px 50px 0;
+    margin: 0 33px 0 0;
     box-shadow: 4px 5px 8px 0 #0000001A;
+    align-items: center;
 }
+
  a.button-order {
     color: #fff;
 }
@@ -923,7 +927,6 @@ ul li {
 .order-window-mobile .price {
     width: 30%;
     align-items: center;
-    margin-top: 17px;
 }
 
 .selection-cards {
@@ -1166,7 +1169,10 @@ ul li {
     color: #fff;
     display: flex;
     align-items: center;
-    width: 580px;
+
+
+    position: absolute;
+    top: -35px;
 }
 
 .setting-text a {
@@ -1181,15 +1187,30 @@ ul li {
 
 .big-image-container img {
     border-radius: 6px;
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.big-image-container {
+    width: 580px;
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+    margin: 50px 0 0 0;
 }
 
 .thumbnail-container {
     display: flex;
     flex: 5 2 5;
+    margin-bottom: 78px;
 }
 
-.big-image-container {
-}
+
 
 .thumbnail {
     margin-right: 13px;
@@ -1712,15 +1733,17 @@ h3 {
     transition: transform 0.5s ease-in-out;
     display: flex;
     overflow: hidden;
+    height: 449px;
 }
 
 .presentosa-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: 100%;
     display: block;
     border-radius: 6px;
     max-height:450px ;
+    object-fit: cover;
 }
 
 .presentosa-price {
@@ -1999,6 +2022,7 @@ h3 {
     width: 1160px;
     margin: 10px 14px 50px;
     box-shadow: 18px 14px 55.2px 0 #00000014;
+    justify-content: start;
 }
 
 .slides {
@@ -2015,17 +2039,31 @@ h3 {
     overflow: hidden;
 }
 
-.slide.coming-soon img {
+.coming-soon-img{
     width: 463px;
-    max-width: 463;
     max-height: 320px;
     height: 300px;
+
 }
+.coming-soon-img-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.coming-soon .slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
 
 .slide-text {
     margin: 0 75px 0 40px;
     max-height: 320px;
     overflow-x: auto;
+    width: 60%;
 }
 
 .slide-text h3 {
@@ -2137,13 +2175,16 @@ button.next {
     line-height: 0;
     font-size: 0;
     text-align: center;
+
 }
 
 .slide-image img {
-    max-width: 100%;
+    width: 100%;
     max-height: 100%;
     display: inline-block;
     vertical-align: middle;
+    object-fit: cover;
+
 }
 
 .slide-content {
@@ -2315,10 +2356,30 @@ button.next {
     margin-top: 40px;
 }
 
-.bin-img-img {
+.bin-card-container .bin-img{
+    width: 95px;
+    height: 105px;
+}
+
+.bin-card-container .bin-img-img {
     padding: 3px 26px 5px 0;
-    max-width: 163px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bin-card-container .bin-card{
+    min-width: 432px;
+    min-height: 105px;
+    justify-content: space-between;
+}
+
+
+.constructor .bin-img-img {
+    padding: 3px 26px 5px 0;
+    max-width: 135px;
     max-height: 149px;
+    min-height: 149px;
 }
 
 .bin-cross {
@@ -2833,7 +2894,7 @@ button.next {
 .constructor-cards.mobile{
     display: none;
 }
-.bin-cross{
+ .constructor .bin-cross{
     display: none;
 }
 .constructor{
@@ -2947,7 +3008,7 @@ flex-direction: row;
 background-color: #fff;
 max-width: 440px;
 max-height: 151px;
-
+justify-content: space-around;
 
 }
 .bin-card.constructor p{
@@ -2987,6 +3048,7 @@ max-height: 151px;
     width: 36px;
     height: 36px;
 }
+
 
 @media (max-width: 1500px) {
     .info-container .text-info .adress {
@@ -3104,6 +3166,13 @@ max-height: 151px;
 
     .presentosa-img {
         padding: 100px 0;
+        height: 250px;
+    }
+    .presentosa-left{
+        padding-top: 0;
+    }
+    .presentosa-container{
+        padding-top: 24px;
     }
 
     .presentosa .presentosa-button {
@@ -3265,12 +3334,13 @@ max-height: 151px;
     }
 
     .slide img {
-        width: 330px;
+        width: 100%;
     }
 
     .slide-text {
         max-height: 230px;
         margin: 0 16px;
+        width: 85%;
     }
     .constructor-cards-container{
         width: 99%;
@@ -3308,6 +3378,7 @@ text-align: left;
     }
     .constructor .bin-img-img{
         padding: 0 20px;
+
     }
     .left-sub-text h5{
         font-size: 14px;
@@ -3573,6 +3644,11 @@ text-align: left;
 
     .order-imgs {
     }
+    .big-image-container{
+        height: 100%;
+        width: 90%;
+        margin:40px auto 0 auto;
+    }
 
     .order-window-mobile .button-order {
         margin: 11px 18px 22px 0;
@@ -3621,7 +3697,6 @@ text-align: left;
     }
 
     .big-image-container img {
-        width: 92vw;
         gap: 5px;
         margin-right: 5px;
         margin-top: 5px;
@@ -3629,7 +3704,7 @@ text-align: left;
 
     .thumbnail {
         width: 17vw;
-        height: 10%;
+        height: 100%;
         margin-right: 5px;
         margin-top: 5px;
         transition: 0;
@@ -3945,6 +4020,8 @@ text-align: left;
         width: 100%;
         margin: 0 5% 0 5%;
         justify-content: space-around;
+        min-width: 0;
+        min-height: 0;
     }
 
     .bin-text p {
@@ -4002,7 +4079,14 @@ text-align: left;
 
     .slide img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+
+   .coming-soon-img-im{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .slider-btn-prev, .slider-btn-next {
@@ -4024,6 +4108,7 @@ text-align: left;
         padding-top: 10px;
         padding-bottom: 18px;
         max-height: unset;
+        width: 100%;
     }
 
     .bin-mobile {
@@ -4108,6 +4193,11 @@ text-align: left;
     .bin-mobile .bin-card {
         margin: 0 10px;
         padding: 0;
+        justify-content: center;
+    }
+    .bin-card-container .bin-card{
+      justify-content: space-around;
+      min-width: 0;
     }
 
     .announce-slider-container {
@@ -4130,8 +4220,8 @@ text-align: left;
         align-items: start;
 
     }
-    
-    .bin-cross{
+
+   .constructor .bin-cross{
         display: none;
     }
     .constructor .left-sub-text{
@@ -4186,9 +4276,25 @@ text-align: center;
     }
     .constructor .bin-img-img{
         width: 118px;
-height: 109px;
-   
+        height: 109px;
+
 }
+.thumbnail-container{
+    margin-bottom: 0;
+    margin-top: 10px;
+    height: 60px;
+}
+
+    .coming-soon-img{
+        width: 100%;
+        height: 300px;
+    }
+    .constructor .bin-img-img {
+        padding: 3px 12px 5px 12px;
+        max-width: 135px;
+        max-height: 149px;
+        min-height: 105px;
+    }
 }
 @media (max-width: 525px) {
     .about-section-mobile .about-block {
@@ -4233,6 +4339,7 @@ height: 109px;
 
     .slide-image {
         width: 45.05%;
+
     }
 
     .slide-content {
@@ -4265,6 +4372,7 @@ height: 109px;
         right: 14px;
         background-size: 100% auto;
     }
+
 }
 
 @media (max-width: 400px) {

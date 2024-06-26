@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     announcesSlider.slick({
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
         dotsClass: 'breadcrumbs slider-soon',
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     additionalSlider.slick({
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
         arrows: false,
