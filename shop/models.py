@@ -10,6 +10,7 @@ class Category(BaseModel):
     image = models.ImageField('Image', upload_to='category_images')
 
     sort = models.IntegerField('Sort', default=0)
+    is_constructor = models.BooleanField('Constructor?', default=False)
 
     class Meta:
         verbose_name = 'Category'
@@ -65,3 +66,20 @@ class Material(BaseModel):
 
     def __str__(self):
         return self.name
+
+
+class Bracelet(BaseModel):
+    products = models.ManyToManyField('Product', blank=True)
+
+    class Meta:
+        verbose_name = 'Bracelet'
+        verbose_name_plural = 'Bracelets'
+
+    def __str__(self):
+        return f"{self.id}"
+
+    def get_price(self):
+        sum = 0
+        for product in self.products.all():
+            sum += product.price
+        return sum

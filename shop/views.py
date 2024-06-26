@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from base.models import Page
 from shop.models import Category, Product
@@ -42,4 +42,14 @@ def product(request, slug):
 
 
 def constructor(request):
-    pass
+    category_constructor = Category.objects.filter(is_constructor=True)[0]
+    page = get_object_or_404(Page, slug='constructor')
+    context = {
+        "products": category_constructor.product.all(),
+        "page": page,
+    }
+    return render(request, 'constructor.html', context=context)
+
+
+def constructor_save(request):
+    return redirect('order')

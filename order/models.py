@@ -41,3 +41,19 @@ class OrderProduct(BaseModel):
 
     def get_price(self):
         return self.product.price * self.quantity
+
+
+class OrderBracelet(BaseModel):
+    order = models.ForeignKey('Order', on_delete=models.CASCADE, related_name='bracelets')
+    bracelet = models.ForeignKey('shop.Bracelet', on_delete=models.CASCADE)
+    quantity = models.IntegerField('Quantity', default=1)
+
+    class Meta:
+        verbose_name = 'Order Bracelet'
+        verbose_name_plural = 'Order Bracelets'
+
+    def __str__(self):
+        return f'{self.bracelet.id} x {self.quantity}'
+
+    def get_price(self):
+        return self.bracelet.get_price() * self.quantity
