@@ -19,6 +19,11 @@ $(document).ready(function() {
     const overlay = $('#overlay');
     const btnCloseSidebar = $('#btnCloseSidebar');
     const increment = $('.increment');
+    const decrement = $('.decrement');
+    const constructorItems = $('#constructorItems');
+    const binCard = $('.bin-card');
+    const priceTotal = $('.priceTotal');
+    const selectedItemsInput = $('#selectedItems');
     
 
     const toggleSidebar = () => {
@@ -74,4 +79,38 @@ $(document).ready(function() {
     btnBasket.on('click', () => { toggleSidebar(); });
     btnCloseSidebar.on('click', () => { toggleSidebar(); });
     overlay.on('click', () => { toggleSidebar(); });
+
+    let priceTotalVal = parseFloat(priceTotal.text());
+    let selectedItems = [];
+    binCard.each(function () {
+        let card = $(this);
+        let checkmark = card.find('.checkmark');
+        let binImg = card.find('.bin-img-img');
+        let price = parseFloat(card.data('price'));
+        let itemId = card.data('id');
+        let fullImgSrc = card.data('img');
+
+        card.on('click', (e) => {
+            checkmark.toggle();
+            if (checkmark.is(':visible')) {
+                let constructorItem = $('<div class="constructor-item" data-id="' + itemId + '">' +
+                    '<img src="' + fullImgSrc + '" alt=""></div>');
+                constructorItems.append(constructorItem);
+                priceTotalVal += price;
+                selectedItems.push(itemId);
+            } else {
+                constructorItems.find('.constructor-item[data-id="' + itemId + '"]').remove();
+                priceTotalVal -= price;
+                for (let i= 0; i < selectedItems.length; i++) {
+                    if (selectedItems[i] === itemId) {
+                        delete selectedItems[i];
+                    }
+                }
+            }
+            priceTotal.text(priceTotalVal.toFixed(2));
+            selectedItems = selectedItems.filter(element => element !== null);
+            selectedItemsInput.val(selectedItems.join(','));
+            console.log(selectedItemsInput.val());
+        });
+    });
 });   

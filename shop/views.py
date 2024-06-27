@@ -2,7 +2,9 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 
 from base.models import Page
-from shop.models import Category, Product
+from order.models import OrderBracelet
+from order.service import order_service
+from shop.models import Category, Product, Bracelet
 
 
 def categories(request):
@@ -45,11 +47,24 @@ def constructor(request):
     category_constructor = Category.objects.filter(is_constructor=True)[0]
     page = get_object_or_404(Page, slug='constructor')
     context = {
-        "products": category_constructor.product.all(),
+        "products": category_constructor.products.all(),
         "page": page,
     }
     return render(request, 'constructor.html', context=context)
 
 
 def constructor_save(request):
+    selected_items = request.POST.get('selected_items').split(',')
+
+    bracelet = Bracelet()
+    bracelet.save()
+    for item in selected_items:
+        product = Product.objects.get(id=item)
+        bracelet.products.add(product)
+
+    order = order_service.get_order(request)
+    brac = OrderBracelet(
+        order=order,
+        bracelet=bracelet)
+    brac.save()
     return redirect('order')

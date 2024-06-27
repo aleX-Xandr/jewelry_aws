@@ -68,4 +68,9 @@ $('.breadcrumb').on('click', function() {
      $(this).hide();
  });
 
+ $('.buy-now').on('click', function(event) {
+     event.preventDefault(); // Prevent triggering the parent click event
+     $('#constructor_form').submit();
+ });
+
 });   

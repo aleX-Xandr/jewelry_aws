@@ -5,7 +5,7 @@ from base.models import Page
 from base.service import back
 from order.models import OrderProduct
 from order.service import order_service
-from shop.models import Product
+from shop.models import Product, Bracelet
 
 
 def order(request):
@@ -57,11 +57,21 @@ def delete(request):
     order = order_service.get_order(request)
 
     product_id = request.GET.get('product_id')
-    product = Product.objects.filter(id=product_id)
-    if not product:
-        return JsonResponse({"status": False, "message": "product_not_found"})
-    else:
-        product = product.first()
+    bracelet_id = request.GET.get('bracelet_id')
+    if product_id:
+        product = Product.objects.filter(id=product_id)
+        if not product:
+            return JsonResponse({"status": False, "message": "product_not_found"})
+        else:
+            product = product.first()
 
-    order.products.filter(product=product).delete()
+        order.products.filter(product=product).delete()
+    elif bracelet_id:
+        bracelet = Bracelet.objects.filter(id=bracelet_id)
+        if not bracelet:
+            return JsonResponse({"status": False, "message": "bracelet_not_found"})
+        else:
+            bracelet = bracelet.first()
+
+        order.bracelets.filter(bracelet=bracelet).delete()
     return redirect('order')

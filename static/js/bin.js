@@ -4,7 +4,12 @@ $(document).ready(function() {
 
         var redirect = $(this).closest('.bin-card').attr('on-edit');
         var productId = $(this).closest('.bin-card').attr('data-product');
-        window.location.replace(redirect + "?product_id=" + productId + "&quantity=" + (value + 1));
+        var braceletId = $(this).closest('.bin-card').attr('data-bracelet');
+        if (productId != '') {
+            window.location.replace(redirect + "?product_id=" + productId + "&quantity=" + (value + 1));
+        } else if (braceletId != '') {
+            window.location.replace(redirect + "?bracelet_id=" + productId + "&quantity=" + (value + 1));
+        }
 
 //        $(this).siblings('.numberInput').val(value + 1);
     });

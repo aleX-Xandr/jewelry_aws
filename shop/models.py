@@ -33,6 +33,7 @@ class Product(BaseModel):
     materials = models.ManyToManyField('Material', blank=True)
     quantity = models.IntegerField('Quantity', default=0)
 
+    image_for_bracelet = models.ImageField('Bracelet image', upload_to='bracelet_images', null=True, blank=True)
     sort = models.IntegerField('Sort', default=0)
 
     class Meta:
@@ -76,10 +77,13 @@ class Bracelet(BaseModel):
         verbose_name_plural = 'Bracelets'
 
     def __str__(self):
-        return f"{self.id}"
+        return self.get_name()
 
     def get_price(self):
         sum = 0
         for product in self.products.all():
             sum += product.price
         return sum
+
+    def get_name(self):
+        return f"{len(self.products.all())} Coulons"

@@ -18,12 +18,16 @@ class Order(BaseModel):
         sum = 0
         for product in self.products.all():
             sum += product.get_price()
+        for bracelet in self.bracelets.all():
+            sum += bracelet.get_price()
         return sum
 
     def get_count(self):
         count = 0
         for product in self.products.all():
             count += product.quantity
+        for bracelet in self.bracelets.all():
+            count += bracelet.quantity
         return count
 
 

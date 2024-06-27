@@ -17,6 +17,10 @@
             {% for product in order.products.all %}
             {% include 'includes/order_card.html' %}
             {% endfor %}
+
+            {% for bracelet in order.bracelets.all %}
+            {% include 'includes/order_card_bracelet.html' %}
+            {% endfor %}
         </div>
     </div>
     <div class="subtotal">

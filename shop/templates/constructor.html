@@ -8,247 +8,57 @@
 
     <div class="constructor-img">
         <img src="{% static 'img/braclet.png' %}" alt="">
+        <form action="{% url 'constructor_save' %}" method="POST" id="constructor_form">
+            <div class="constructor-items-wrapper" id="constructorItems">
+                {% csrf_token %}
+                <input type="hidden" name="selected_items" id="selectedItems">
+            </div>
+        </form>
     </div>
-    <div class="constructor-cards pc">
+    <div class="constructor-cards">
             <div class="left-sub-text">
                 <h5> Select one or more coulomb</h5>
                 <div class="sub-total">
                 <h5>Subtotale:</h5>
                 <div class="bin-price">
-                    <a href="#">€1.003,00</a>
+                    <a href="#">€<span class="priceTotal">0</span></a>
                 </div>
                 </div>
             </div>
             <div class="constructor-cards-container">
-
-                        <div id="const-card-first" class="bin-card constructor">
-
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
+                        {% for product in products %}
+                        <div class="bin-card constructor" data-price="{{product.price}}" data-id="{{product.id}}" data-img="{{product.image_for_bracelet.url}}">
                             <a href="#">
                                 <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/medal1.jpg" alt="">
+                                    <img class="bin-img-img" src="{{product.preview.url }}" alt="">
                                 </div>
                             </a>
                             <div class="bin-info">
                                 <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
+                                    <a href="#"><p>{{product.name}}</p></a>
+                                    <div class="bin-price">€{{product.price}}</div>
                                 </div>
                             </div>
                             <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
+                                <img class="checkmark" src="{% static 'img/color-tick.svg' %}" alt="">
                             </div>
                         </div>
-                        <div class="bin-card constructor">
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="bin-card constructor">
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="bin-card constructor">
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="bin-card constructor">
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="bin-card constructor">
-                            <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="static/img/collection-crown.jpg" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                    <a class="bin-price" href="#">€70.00</a>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                            </div>
-                        </div>
+                        {% endfor %}
                 </div>
                 <a href="#" class="buy-now pc">Buy Now</a>
             </div>
 
-    <div class="constructor-cards mobile">
-        <div class="left-sub-text">
-            <h5> Select one or more coulomb</h5>
-        </div>
-        <div class="constructor-cards-container">
-
-                    <div id="const-card-first" class="bin-card constructor">
-
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
+            <div class="constructor-cards mobile">
+                <div class="left-sub-text">
+                    <h5>Subtotale:</h5>
+                    <div class="bin-price">
+                        <a href="#">€<span class="priceTotal">0</span></a>
                     </div>
-                    <div class="bin-card constructor">
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/medal1.jpg" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="bin-card constructor">
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="bin-card constructor">
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="bin-card constructor">
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="bin-card constructor">
-                        <a class="bin-cross" href="#"><img  src="static/img/bin-cross.svg" alt=""></a>
-                        <a href="#">
-                            <div class="bin-img">
-                                <img class="bin-img-img" src="static/img/silver-jewerly.png" alt="">
-                            </div>
-                        </a>
-                        <div class="bin-info">
-                            <div class="bin-text">
-                                <a href="#"><p>Florentosa con </p><p class="text-link">Rodiato e Rosé con Perle</p></a>
-                                <a class="bin-price" href="#">€70.00</a>
-                            </div>
-                        </div>
-                        <div class="clickable-object">
-                            <img class="checkmark" src="static/img/color-tick.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="left-sub-text">
-
-                        <h5>Subtotale:</h5>
-                        <div class="bin-price">
-                            <a href="#">€1.003,00</a>
-                        </div>
-                        </div>
-                    </div>
+                </div>
             </div>
-            <a href="#" class="buy-now mobile">Buy Now</a>
         </div>
+    </div>
+  </div>
 
-   </div>
 </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="bin-card" data-product="{{product.product.id}}" on-edit="{% url 'order_edit' %}">
+<div class="bin-card" data-product="{{product.product.id}}" data-bracelet="" on-edit="{% url 'order_edit' %}">
     <a class="bin-cross" href="{% url 'order_delete' %}?product_id={{product.product.id}}"><img  src="{% static 'img/bin-cross.svg' %}" alt=""></a>
     <a href="{% url 'product' slug=product.product.slug %}">
         <div class="bin-img">
