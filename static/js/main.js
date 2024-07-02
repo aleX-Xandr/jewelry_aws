@@ -58,17 +58,17 @@ $('.breadcrumb').on('click', function() {
 
     
  // Toggle checkmark visibility on click
- $('.clickable-object').on('click', function() {
-     $(this).find('.checkmark').toggle();
- });
+ // $('.clickable-object').on('click', function() {
+ //     $(this).find('.checkmark').toggle();
+ // });
 
- // Hide checkmark on click
- $('.checkmark').on('click', function(event) {
-     event.stopPropagation(); // Prevent triggering the parent click event
-     $(this).hide();
- });
+ // // Hide checkmark on click
+ // $('.checkmark').on('click', function(event) {
+ //     event.stopPropagation(); // Prevent triggering the parent click event
+ //     $(this).hide();
+ // });
 
- $('.buy-now').on('click', function(event) {
+ $('.buy-now.pc').on('click', function(event) {
      event.preventDefault(); // Prevent triggering the parent click event
      $('#constructor_form').submit();
  });
