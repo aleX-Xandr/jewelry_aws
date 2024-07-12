@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'base',
     'shop',
     'order',
+
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -164,3 +166,8 @@ JAZZMIN_SETTINGS = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PAYPAL_RECEIVER_EMAIL = env('PAYPAL_RECEIVER_EMAIL')
+PAYPAL_TEST = env('PAYPAL_TEST')
+
+PAYPAL_BUY_BUTTON_IMAGE = env('PAYPAL_BUY_BUTTON_IMAGE')

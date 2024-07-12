@@ -7,11 +7,32 @@ from order.models import OrderProduct
 from order.service import order_service
 from shop.models import Product, Bracelet
 
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+from django.urls import reverse
+
 
 def order(request):
     page = get_object_or_404(Page, slug='order')
+
+    host = request.get_host()
+
+    order = order_service.get_order(request)
+    paypal_checkout = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": order.get_price(),
+        "item_name": f"ORDER #{order.id}",
+        "invoice": order.id,
+        "currency": "EUR",
+        "notify_url": f"https://{host}{reverse('paypal-ipn')}",
+        "return_url": f"https://{host}{reverse('index')}",
+        "cancel_url": f"https://{host}{reverse('index')}",
+    }
+    paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
+
     context = {
         "page": page,
+        "paypal": paypal_payment,
     }
     return render(request, 'order.html', context=context)
 

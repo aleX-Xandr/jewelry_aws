@@ -37,10 +37,19 @@
                     </div>
                 </div>
                 <div class="buttons-container">
+                    <style>
+                        input[type="image" i] {
+                            height: 46px;
+                            margin-top: 5px;
+                        }
+                    </style>
                     <form class="checkout" action=""><a  href="#">Checkout</a></form>
-                   <form class="pay-pal-link" action="">
-                    <a href="#"><img class="pay-pal" src="{% static 'img/paypal.svg' %}" alt=""> <p>Checkout</p></a>
-                   </form>
+                    <div style="height: 46px; background-color: #FFC647; width: 95%; border-radius: 10px; align-items: center; justify-content: center; display: flex;">
+                        {{paypal.render}}
+                    </div>
+<!--                   <form class="pay-pal-link" action="">-->
+<!--                    <a href="#"><img class="pay-pal" src="{% static 'img/paypal.svg' %}" alt=""> <p>Checkout</p></a>-->
+<!--                   </form>-->
                 </div>
                 <div class="input-one">
                     <form action="">
