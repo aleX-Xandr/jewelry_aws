@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from base.models import Page
 from order.models import OrderBracelet
 from order.service import order_service
-from shop.models import Category, Product, Bracelet
+from shop.models import Category, Product, Bracelet, Material
 
 
 def categories(request):
@@ -36,9 +36,22 @@ def product(request, slug):
     product = get_object_or_404(Product, slug=slug)
     recommend_products = Product.objects.filter().order_by('?')[:4]
 
+    materials = Material.objects.filter()
+    material_get = request.GET.get('material')
+    if not material_get:
+        material = materials.first()
+    else:
+        material = Material.objects.filter(id=material_get).first()
+
+    images = product.images.filter(material=material)
+
     context = {
         "product": product,
         "recommend_products": recommend_products,
+        "images": images,
+
+        "materials": materials,
+        "chosen_material": material,
     }
     return render(request, 'product.html', context=context)
 

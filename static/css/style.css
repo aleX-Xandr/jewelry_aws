@@ -667,8 +667,6 @@ ul li {
 }
 
 .jewerly-img {
-    width: 340px;
-    height: 300px;
 }
 
 .jewerly-img img {
@@ -1308,6 +1306,16 @@ h3 {
     opacity: 1;
 }
 
+.material {
+    border-radius: 50px;
+    width: 33px;
+    height: 33px;
+    margin-right: 16px;
+    text-align: left;
+    min-height: 33px;
+    min-width: 33px;
+}
+
 #gold-material {
     background-color: #E0CE57;
     border-radius: 50px;
@@ -1896,12 +1904,11 @@ h3 {
 }
 
 .selection-img.collection img {
-    width: 255px;
     padding: 8px 45px 9px 40px;
-    height: 160px;
 }
 
 .selection-img.collection {
+    align-items: center;
 }
 
 .selection-card.collection {

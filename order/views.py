@@ -22,11 +22,11 @@ def order(request):
         "business": settings.PAYPAL_RECEIVER_EMAIL,
         "amount": order.get_price(),
         "item_name": f"ORDER #{order.id}",
-        "invoice": order.id,
+        "invoice": f"{order.id}",
         "currency": "EUR",
         "notify_url": f"https://{host}{reverse('paypal-ipn')}",
-        "return_url": f"https://{host}{reverse('index')}",
-        "cancel_url": f"https://{host}{reverse('index')}",
+        "return": f"https://{host}{reverse('index')}",
+        "cancel_return": f"https://{host}{reverse('index')}",
     }
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 

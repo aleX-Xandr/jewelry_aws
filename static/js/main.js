@@ -23,6 +23,13 @@ $buttons.on('click', function() {
     console.log('button clicked');
 });
 
+$thumbnails.on('click', function() {
+    console.log("123");
+    var src = $(this).attr('data-large-src');
+    console.log(src);
+    $('#largeImage').attr('src', src);
+});
+
 // Pagination click event
 $('.pagination').on('click', function() {
     $('.pagination').removeClass('activePagination');

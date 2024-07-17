@@ -46,7 +46,8 @@ class Product(BaseModel):
 
 
 class ProductImage(BaseModel):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')
+    material = models.ForeignKey('Material', on_delete=models.CASCADE, null=True)
     image = models.ImageField('Image', upload_to='product_images')
 
     class Meta:

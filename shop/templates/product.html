@@ -14,18 +14,22 @@
                 <img id="largeImage" src="{{product.preview.url}}" alt="Large Image">
             </div>
             <div class="thumbnail-container">
-                <img class="thumbnail" src="{{product.preview.url}}" alt="Small Image 1" data-large-src="{{product.preview.url}}">
-                {% for image in product.images.all %}
-                <img class="thumbnail" src="{{image.url}}" alt="Small Image 2" data-large-src="{{image.url}}">
+                <img class="thumbnail" src="{{product.preview.url}}" alt="" data-large-src="{{product.preview.url}}">
+                {% for image in images %}
+                <img class="thumbnail" src="{{image.image.url}}" alt="" data-large-src="{{image.image.url}}">
                 {% endfor %}
             </div>
         </div>
         <div class="setting-right">
             <img class="setting-border-line" src="{% static 'img/right-setting-line.svg' %}" alt="">
             <div class="color-container">
-                <p id="gold-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
-                <p id="silver-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
-                <p id="bronze-material" class="setting-right-color"><img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button"></p>
+                {% for material in materials %}
+                <a href="{% url 'product' slug=product.slug %}?material={{material.id}}">
+                    <p id="{{material.name}}-material" class="setting-right-color material {% if chosen_material == material %}with-border checked{% endif %}" style="background-color: {{material.color}};">
+                        <img class="color-tick" src="{% static 'img/color-tick.svg' %}" alt="Toggle Button">
+                    </p>
+                </a>
+                {% endfor %}
                 <p class="choose-metal">choose metal</p>
             </div>
             <h3 class="right-settings-title">{{product.name}}</h3>
