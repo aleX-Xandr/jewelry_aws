@@ -8,7 +8,7 @@
 
     <div class="constructor-img">
         <img src="{% static 'img/braclet.png' %}" alt="">
-        <form action="{% url 'constructor_save' %}" method="POST" id="constructor_form">
+        <form action="" method="POST" id="constructor_form">
             <div class="constructor-items-wrapper" id="constructorItems">
                 {% csrf_token %}
                 <input type="hidden" name="selected_items" id="selectedItems">
@@ -45,7 +45,7 @@
                         </div>
                         {% endfor %}
                 </div>
-                <a href="#" class="buy-now pc">Buy Now</a>
+                <a href="{% url 'order' %}" class="buy-now pc">Buy Now</a>
             </div>
 
             <div class="constructor-cards mobile">

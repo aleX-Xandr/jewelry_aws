@@ -156,8 +156,8 @@ ul li {
 .about-section-mobile .silver-medal-img {
     margin-top: -5px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     max-height: 450px
 }
 
@@ -1660,7 +1660,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 1260px;
+    max-width: 1300px;
     flex-direction: column;
     background-color: #1B2251;
     position: relative;
@@ -1675,6 +1675,7 @@ h3 {
     align-items: center;
     box-sizing: border-box;
     padding: 0 2.7% 0 2.7%;
+    align-items: center;
 }
 
 .presentosa-left {
@@ -1710,7 +1711,7 @@ h3 {
 }
 
 .presentosa-right {
-    width: 50%;
+    width: 65%;
     padding-left: 14px;
     box-sizing: border-box;
 }
@@ -1744,13 +1745,131 @@ h3 {
     height: 449px;
 }
 
+.presentosa-left.two{
+    width: 35%;
+}
+
+.slide-two-container.mobile{
+    display: none;
+}
+
+.first-row, .second-row, .third-row{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+
+}
+
+.bottom-row{
+    display: flex;
+    align-items: flex-start;
+    gap: 21px;
+    margin-top: -21px;
+}
+
+.presentosa-img.two{
+
+}
+
+.slide-two-container{
+    flex: 1 1 50%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    gap: 21px;
+    align-items: end;
+}
+
+.slide1{
+    background-color: #fff;
+    border-radius: 8px;
+    padding:0 30px 13px 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 calc(25% - 16px);
+    flex-direction: column;
+    overflow: hidden;
+}
+.slide1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    max-height: 170px;
+}
+
+.slide1.three, .slide1.four img{
+    max-height: 146px;
+    margin-top: 10px;
+}
+
+
+.slide1.one{
+    height: 224px;
+    width: 224px;
+}
+.slide1.one img{
+
+}
+
+.slide1.two{
+    height: 210px;
+}
+
+.slide1.three, .slide1.four{
+    height: 197px;
+}
+
+
+.slide1.five, .slide1.six{
+    height: 150px;
+}
+
+.slide1.seven{
+    height: 158px;
+}
+
+.slide1.eight, .slide1.nine{
+    height: 172px;
+}
+
+.slide1 p{
+    text-align: center;
+    margin: 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.art{
+    text-align: center;
+    margin: 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.art-price{
+    font-family: Inter;
+    font-size: 12.86px;
+    font-weight: 500;
+    line-height: 16.54px;
+    color:#E0CE57;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
 .presentosa-img img {
     width: 100%;
     height: 100%;
     max-width: 100%;
     display: block;
     border-radius: 6px;
-    max-height:450px ;
     object-fit: cover;
 }
 
@@ -3114,6 +3233,18 @@ justify-content: space-around;
 }
 
 @media (max-width: 1200px) {
+    .bottom-row{
+        margin-top: 0;
+    }
+
+    .presentosa-left.two{
+        width: 100%;
+    }
+
+    .slide-two-container{
+        margin-top: -100px;
+    }
+
     .main-box .container .nav-bar.absolute {
         padding: 0;
         margin: 0;
@@ -3432,6 +3563,84 @@ text-align: left;
 }
 
 @media (max-width: 660px) {
+    .presentosa-img{
+        height: 520px;
+        align-items: center;
+        padding: 40px 0 0 0;
+    }
+    .presentosa-img.two{
+        align-items: center;
+    }
+    .row{
+        display: flex;
+        gap:15px;
+        justify-content: center;
+    }
+    .row.one{
+    align-items: flex-end;
+    }
+    .row.two{
+        align-items: center;
+    }
+    .row-three{
+        align-items: flex-start;
+    }
+    .slide-two-container{
+        display: none;
+        margin-top: -10px;
+    }
+    .slide-two-container.mobile{
+        display: flex;
+        justify-content: center;
+    }
+    .slide1{
+        max-width: 102px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 4px 10px 13px 9px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex: 1 1 calc(33.333% - 14px); /* 3 карточки в строке */
+    }
+    .slide1.one{
+        height: 167px;
+    }
+    .slide1.two{
+        height: 155px;
+    }
+    .slide1.three{
+        height: 143px;
+    }
+
+    .slide1.four{
+        height: 135px;
+    }
+    .slide1{
+        flex: 1 1 calc(33.333% - 21px);
+    }
+    .art{
+        font-family: Inter;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.72px;
+        text-align: center;
+        margin: 0;
+        width: 160%;
+    }
+    .art-price{
+        font-family: Inter;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16.72px;
+        text-align: center;
+
+    }
+
     .nav-title {
         text-align: center;
         font-family: Inika;
@@ -3899,7 +4108,7 @@ text-align: left;
     }
 
     .presentosa-img {
-        padding: 24px 0 33px 0;
+        padding: 40px 0 10px 0;
     }
 
     .presentosa-button {

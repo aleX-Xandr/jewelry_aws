@@ -1,18 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from base.models import ContactRequest, Contact, Page, AboutImage
-from shop.models import Product
+from base.service import get_materials_for_slider
+from shop.models import Product, Material, Category
 
 
 def index(request):
-    slide_products = Product.objects.filter().order_by('?')[:4]
+    slide_products = Product.objects.filter().order_by('?')[:1]
     collections = Product.objects.filter().order_by('?')[:6]
     coming_soon = Product.objects.filter().order_by('?')[:4]
     you_may_also_like = Product.objects.filter().order_by('?')[:6]
 
+    materials = get_materials_for_slider()
     page = get_object_or_404(Page, slug='index')
     context = {
         "slide_products": slide_products,
+        "slide_materials": materials,
+
         "collections": collections,
         "coming_soon": coming_soon,
         "you_like": you_may_also_like,

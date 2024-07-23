@@ -4,30 +4,7 @@
 {% block 'content' %}
 <div class="presentosa">
     <div class="presentosa-container">
-        <div class="slider-presentosa" id="sliderPresentosa">
-            {% for product in slide_products %}
-            <div>
-                <div class="presentosa-main">
-                    <div class="presentosa-left">
-                        <div class="presentosa-text">
-                            <h1>{{product.name}}</h1>
-                            <p>
-                                {{product.description}}
-                            </p>
-                        </div>
-                        <a class="presentosa-price" href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
-                        <a href="{% url 'product' slug=product.slug %}" class="presentosa-button">Buy Now</a>
-                        <a class="presentosa-button-mobile">See More</a>
-                    </div>
-                    <div class="presentosa-right">
-                        <div class="presentosa-img">
-                            <img src="{{product.preview.url}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor  %}
-        </div>
+        {% include 'includes/home_slider.html' %}
 
        <div class="presentosa-crumbs">
             <a class="arrow-left-direction-a" href="#" id="sliderPresentosaPrev">

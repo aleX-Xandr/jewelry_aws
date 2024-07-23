@@ -10,7 +10,7 @@ class Category(BaseModel):
     image = models.ImageField('Image', upload_to='category_images')
 
     sort = models.IntegerField('Sort', default=0)
-    is_constructor = models.BooleanField('Constructor?', default=False)
+    is_coulomb = models.BooleanField('Coulomb?', default=False)
 
     class Meta:
         verbose_name = 'Category'

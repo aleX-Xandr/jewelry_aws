@@ -1,0 +1,92 @@
+<div class="slider-presentosa" id="sliderPresentosa">
+    {% for product in slide_products %}
+    <div>
+        <div class="presentosa-main">
+            <div class="presentosa-left">
+                <div class="presentosa-text">
+                    <h1>{{product.name}}</h1>
+                    <p>
+                        {{product.description}}
+                    </p>
+                </div>
+                <a class="presentosa-price" href="{% url 'product' slug=product.slug %}">€{{product.price}}</a>
+                <a href="{% url 'product' slug=product.slug %}" class="presentosa-button">Buy Now</a>
+                <a class="presentosa-button-mobile">See More</a>
+            </div>
+            <div class="presentosa-right">
+                <div class="presentosa-img">
+                    <img src="{{product.preview.url}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor  %}
+    {% for material in slide_materials %}
+    <div>
+        <div class="presentosa-main">
+            <div class="presentosa-left two">
+                <div class="presentosa-text">
+                    <h1>La Presentosa</h1>
+                    <p>
+                        Una nuova idea per personalizzare completamente il tuo regalo. Una base, due interni e..32 combinazioni possibili!
+                    </p>
+                </div>
+                <a class="presentosa-price" href=""></a>
+                <a href="" class="presentosa-button" style="width: 50%; background-color: {{material.color}};">See More</a>
+                <a class="presentosa-button-mobile" style="background-color: {{material.color}};">See More</a>
+            </div>
+            <div class="presentosa-right">
+                <div class="presentosa-img two">
+                    <div class="slide-two-container">
+                        {% for product in material.coulombs_1 %}
+                        <div class="slide1 {{product.position}}">
+                            <img src="{{product.preview.url}}" alt="">
+                            <p class="art">{{product.name}}</p>
+                            <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                        </div>
+                        {% endfor %}
+                      <div class="bottom-row" style="height: 172px; width: 100%;">
+                          {% for product in material.coulombs_2 %}
+                        <div class="slide1 {{product.position}}">
+                            <img src="{{product.preview.url}}" alt="">
+                            <p class="art">{{product.name}}</p>
+                            <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="slide-two-container mobile">
+                       <div class="row one">
+                            {% for product in material.mob_coulombs_1 %}
+                            <div class="slide1 {{product.position}}">
+                                <img src="{{product.preview.url}}" alt="">
+                                <p class="art">{{product.name}}</p>
+                                <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                            </div>
+                            {% endfor %}
+                       </div>
+                        <div class="row two">
+                            {% for product in material.mob_coulombs_2 %}
+                            <div class="slide1 {{product.position}}">
+                                <img src="{{product.preview.url}}" alt="">
+                                <p class="art">{{product.name}}</p>
+                                <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                            </div>
+                            {% endfor %}
+                       </div>
+                       <div class="row three">
+                            {% for product in material.mob_coulombs_3 %}
+                            <div class="slide1 {{product.position}}">
+                                <img src="{{product.preview.url}}" alt="">
+                                <p class="art">{{product.name}}</p>
+                                <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                            </div>
+                            {% endfor %}
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

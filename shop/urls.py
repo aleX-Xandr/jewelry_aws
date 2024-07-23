@@ -8,5 +8,5 @@ urlpatterns = [
     path('product/<slug>/', views.product, name='product'),
 
     path('constructor/', views.constructor, name='constructor'),
-    path('constructor/save/', views.constructor_save, name='constructor_save'),
+    # path('constructor/save/', views.constructor_save, name='constructor_save'),
 ]
