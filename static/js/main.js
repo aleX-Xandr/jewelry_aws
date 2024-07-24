@@ -61,6 +61,26 @@ $('.breadcrumb').on('click', function() {
     $(this).addClass('active');
 });
 
+$('#checkoutButton').on('click', function() {
+    console.log('123');
+
+    var form = $('#checkoutForm');
+    var reportValidity = form[0].reportValidity();
+    if(reportValidity){
+        form.submit();
+    }
+});
+
+$('.checkout').on('click', function() {
+    console.log('123');
+
+    var form = $('#checkoutForm');
+    var reportValidity = form[0].reportValidity();
+    if(reportValidity){
+        form.submit();
+    }
+});
+
  // Add checkmark div to each clickable object
 
     

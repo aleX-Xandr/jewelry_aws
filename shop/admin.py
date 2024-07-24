@@ -23,7 +23,8 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInlineAdmin]
 
     def save_model(self, request, obj, form, change):
-        obj.slug = slugify(obj.name)
+        super().save_model(request, obj, form, change)
+        obj.slug = slugify(obj.name) + obj.id
         super().save_model(request, obj, form, change)
 
 
@@ -34,5 +35,6 @@ class CategoryAdmin(admin.ModelAdmin):
     exclude = ['slug']
 
     def save_model(self, request, obj, form, change):
-        obj.slug = slugify(obj.name)
+        super().save_model(request, obj, form, change)
+        obj.slug = slugify(obj.name) + obj.id
         super().save_model(request, obj, form, change)

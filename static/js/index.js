@@ -28,7 +28,12 @@ $(document).ready(function() {
 
     const toggleSidebar = () => {
         sidebarPanel.hasClass('show') ? sidebarPanel.removeClass('show') : sidebarPanel.addClass('show');
-        overlay.hasClass('show') ? overlay.removeClass('show') : overlay.addClass('show');
+
+        if (overlay.hasClass('show')) {
+            overlay.removeClass('show');
+        } else {
+            overlay.addClass('show');
+        }
     };
 
     announcesSlider.slick({
@@ -77,7 +82,7 @@ $(document).ready(function() {
     });
 
     btnBasket.on('click', () => { toggleSidebar(); });
-    btnCloseSidebar.on('click', () => { toggleSidebar(); });
+    btnCloseSidebar.on('click', () => { overlay.click(); });
     overlay.on('click', () => { toggleSidebar(); });
 
     let priceTotalVal = parseFloat(priceTotal.text());

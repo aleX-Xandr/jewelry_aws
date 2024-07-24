@@ -7,6 +7,9 @@ class Order(BaseModel):
     user = models.ForeignKey('user.User', on_delete=models.CASCADE, null=True, blank=True)
     session_key = models.CharField(max_length=40, null=True, blank=True)
 
+    address = models.CharField('Address', max_length=255, default='', blank=True)
+    contact = models.CharField('Contact', max_length=255, default='', blank=True)
+
     class Meta:
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'

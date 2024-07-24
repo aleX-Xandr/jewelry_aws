@@ -36,6 +36,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="input-one">
+                    <form action="" method="POST" id="checkoutForm">
+                        {% csrf_token %}
+                        <input class="input-one-one" type="text" placeholder="Address" required value="{{order.address}}" name="address">
+                        <div style="height: 10px;"></div>
+                        <input class="input-one-one" type="text" placeholder="Contact" required value="{{order.contact}}" name="contact">
+                    </form>
+                </div>
                 <div class="buttons-container">
                     <style>
                         input[type="image" i] {
@@ -43,25 +51,14 @@
                             margin-top: 5px;
                         }
                     </style>
-                    <form class="checkout" action=""><a  href="#">Checkout</a></form>
+                    <form class="checkout">
+                        <a id="checkoutButton">Checkout</a>
+                    </form>
+                    {% if paypal %}
                     <div style="height: 46px; background-color: #FFC647; width: 95%; border-radius: 10px; align-items: center; justify-content: center; display: flex;">
                         {{paypal.render}}
                     </div>
-<!--                   <form class="pay-pal-link" action="">-->
-<!--                    <a href="#"><img class="pay-pal" src="{% static 'img/paypal.svg' %}" alt=""> <p>Checkout</p></a>-->
-<!--                   </form>-->
-                </div>
-                <div class="input-one">
-                    <form action="">
-                        <input class="input-one-one" type="text" placeholder="Inserisci un codice promozionale">
-                        <a class="input-btn" href="#">Apply</a>
-                    </form>
-                    
-                </div>
-                <div class="input-two">
-                   <form action="">
-                    <input class="input-two-two" type="text" placeholder="Aggiungi una nota">
-                   </form>
+                    {% endif %}
                 </div>
             </div>
      </div>
