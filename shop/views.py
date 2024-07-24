@@ -62,7 +62,10 @@ def constructor(request):
     order = order_service.get_order(request)
     products = []
     for prod in order.products.filter(product__category=category_constructor):
-        products.append(prod.product)
+        for i in range(prod.quantity):
+            new_prod = prod.product
+            new_prod.id = str(new_prod.id) + str(i)
+            products.append(new_prod)
 
     context = {
         "products": products,

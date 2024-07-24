@@ -24,7 +24,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
-        obj.slug = slugify(obj.name) + obj.id
+        obj.slug = slugify(obj.name) + str(obj.id)
         super().save_model(request, obj, form, change)
 
 
@@ -36,5 +36,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
-        obj.slug = slugify(obj.name) + obj.id
+        obj.slug = slugify(obj.name) + str(obj.id)
         super().save_model(request, obj, form, change)
