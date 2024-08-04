@@ -5,62 +5,57 @@
 <div class="constructor-container">
     <h2>Bracelet Constructor</h2>
     <div class="constructor">
-
-    <div class="constructor-img">
-        <img src="{% static 'img/braclet.png' %}" alt="">
-        <form action="" method="POST" id="constructor_form">
-            <div class="constructor-items-wrapper" id="constructorItems">
-                {% csrf_token %}
-                <input type="hidden" name="selected_items" id="selectedItems">
-            </div>
-        </form>
-    </div>
-    {% if products %}
-    <div class="constructor-cards">
-        <div class="left-sub-text">
-            <h5> Select one or more coulomb</h5>
-            <div class="sub-total">
-            <h5>Subtotale:</h5>
-            <div class="bin-price">
-                <a href="#">€<span class="priceTotal">0</span></a>
-            </div>
-            </div>
-        </div>
-            <div class="constructor-cards-container">
-                        {% for product in products %}
-                        <div class="bin-card constructor" data-price="{{product.price}}" data-id="{{product.id}}" data-img="{{product.preview.url}}">
-                            <a href="#">
-                                <div class="bin-img">
-                                    <img class="bin-img-img" src="{{product.preview.url }}" alt="">
-                                </div>
-                            </a>
-                            <div class="bin-info">
-                                <div class="bin-text">
-                                    <a href="#"><p>{{product.name}}</p></a>
-                                    <div class="bin-price">€{{product.price}}</div>
-                                </div>
-                            </div>
-                            <div class="clickable-object">
-                                <img class="checkmark" src="{% static 'img/color-tick.svg' %}" alt="">
-                            </div>
-                        </div>
-                        {% endfor %}
+        <div class="constructor-img">
+            <img src="{% static 'img/braclet.png' %}" alt="">
+            <form action="" method="POST" id="constructor_form">
+                <div class="constructor-items-wrapper" id="constructorItems">
+                    {% csrf_token %}
+                    <input type="hidden" name="selected_items" id="selectedItems">
                 </div>
-                <a href="{% url 'order' %}" class="buy-now pc">Buy Now</a>
+            </form>
+        </div>
+        {% if products %}
+        <div class="constructor-cards">
+            <div class="left-sub-text">
+                <h5> Select one or more coulomb</h5>
+                <div class="sub-total">
+                <h5>Subtotale:</h5>
+                <div class="bin-price">
+                    <a href="#">€<span class="priceTotal">0</span></a>
+                </div>
+                </div>
             </div>
-
-            <div class="constructor-cards mobile">
-                <div class="left-sub-text">
-                    <h5>Subtotale:</h5>
-                    <div class="bin-price">
-                        <a href="#">€<span class="priceTotal">0</span></a>
+            <div class="constructor-cards-container">
+                {% for product in products %}
+                <div class="bin-card constructor" data-price="{{product.price}}" data-id="{{product.id}}" data-img="{{product.preview.url}}">
+                    <a href="#">
+                        <div class="bin-img">
+                            <img class="bin-img-img" src="{{product.preview.url }}" alt="">
+                        </div>
+                    </a>
+                    <div class="bin-info">
+                        <div class="bin-text">
+                            <a href="#"><p>{{product.name}}</p></a>
+                            <div class="bin-price">€{{product.price}}</div>
+                        </div>
+                    </div>
+                    <div class="clickable-object">
+                        <img class="checkmark" src="{% static 'img/color-tick.svg' %}" alt="">
                     </div>
                 </div>
+                {% endfor %}
+            </div>
+            <a href="#" class="buy-now pc">Buy Now</a>
+        </div>
+        {% endif %}
+        <div class="constructor-cards mobile">
+            <div class="left-sub-text">
+                <h5>Subtotale:</h5>
+                <div class="bin-price">
+                    <a href="#">€<span class="priceTotal">0</span></a>
+                </div>
             </div>
         </div>
     </div>
-  </div>
-    {% endif %}
-
 </div>
 {% endblock %}
