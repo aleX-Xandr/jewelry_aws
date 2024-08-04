@@ -30,8 +30,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'sort']
-    list_editable = ['sort']
+    list_display = ['name', 'slug', 'sort', 'is_coulomb']
+    list_editable = ['sort', 'is_coulomb']
     exclude = ['slug']
 
     def save_model(self, request, obj, form, change):

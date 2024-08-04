@@ -1801,7 +1801,6 @@ h3 {
 }
 
 .slide1.three, .slide1.four img{
-    max-height: 146px;
     margin-top: 10px;
 }
 
@@ -1839,7 +1838,7 @@ h3 {
     text-align: center;
     margin: 0;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 18px;
 }
@@ -3630,7 +3629,6 @@ text-align: left;
         line-height: 16.72px;
         text-align: center;
         margin: 0;
-        width: 160%;
     }
     .art-price{
         font-family: Inter;

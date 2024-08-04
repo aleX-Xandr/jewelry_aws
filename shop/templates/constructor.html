@@ -27,7 +27,7 @@
             </div>
             <div class="constructor-cards-container">
                         {% for product in products %}
-                        <div class="bin-card constructor" data-price="{{product.price}}" data-id="{{product.id}}" data-img="{{product.image_for_bracelet.url}}">
+                        <div class="bin-card constructor" data-price="{{product.price}}" data-id="{{product.id}}" data-img="{{product.preview.url}}">
                             <a href="#">
                                 <div class="bin-img">
                                     <img class="bin-img-img" src="{{product.preview.url }}" alt="">

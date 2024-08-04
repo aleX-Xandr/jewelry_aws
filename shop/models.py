@@ -33,7 +33,6 @@ class Product(BaseModel):
     materials = models.ManyToManyField('Material', blank=True)
     quantity = models.IntegerField('Quantity', default=0)
 
-    image_for_bracelet = models.ImageField('Bracelet image', upload_to='bracelet_images', null=True, blank=True)
     sort = models.IntegerField('Sort', default=0)
 
     class Meta:
