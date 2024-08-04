@@ -3368,6 +3368,13 @@ justify-content: space-around;
 }
 
 @media (max-width: 1000px) {
+    .color-tick {
+        position: absolute;
+        top: 15px;
+        right: -4px;
+        opacity: 0;
+    }
+
     .basket-img {
         background-color: #3546BA;
         position: absolute;
