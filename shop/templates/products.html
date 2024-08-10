@@ -8,7 +8,7 @@
     <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
     {% for product in page %}
     <div class="selection-card">
-        <div class="selection-img">
+        <div class="selection-img collection">
             <a href="{% url 'product' slug=product.slug %}"><img src="{{product.preview.url}}" alt=""></a>
         </div>
         <div class="selection-info">
@@ -28,7 +28,7 @@
     <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
     {% for product in page %}
     <div class="selection-card">
-        <div class="selection-img">
+        <div class="selection-img collection">
             <img src="{{product.preview.url}}" alt="">
         </div>
         <div class="selection-info">
