@@ -9,7 +9,7 @@
     </a>
     <div class="bin-info">
         <div class="bin-text">
-            <p class="text-link">{{product.product.name}}</p></a>
+            <p class="text-link" style="max-width: 150px;">{{product.product.name}}</p></a>
             <a class="bin-price" href="{% url 'product' slug=product.product.slug %}">€{{product.get_price}}</a>
         </div>
         <div class="settings-amount bin">
