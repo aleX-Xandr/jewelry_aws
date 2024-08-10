@@ -672,12 +672,14 @@ ul li {
     box-shadow: 18px 14px 55.2px 0 #00000014;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    height: 275px;
+    height: 225px;
+    display: flex;
 }
 
 .jewerly-img img {
     object-fit: cover;
     width: 100%;
+    self-align: center;
 }
 
 .jewerly-info .arrow-right-direction {
@@ -3865,15 +3867,10 @@ text-align: left;
     }
 
     .jewerly-img {
-        height: 125px;
+        height: 115px;
         border-bottom-right-radius: 6px;
         border-bottom-left-radius: 6px;
         padding: 5px 20px 0 21px;
-    }
-
-    .jewerly-img img {
-        width: 100%;
-        object-fit: cover;
     }
 
     .order-window-mobile {
