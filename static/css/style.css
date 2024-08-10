@@ -952,6 +952,12 @@ ul li {
     height: 95px;
 }
 
+.selection-cards-mobile .selection-img img {
+    width: 105px;
+    height: 95px;
+    padding: 0 29px 0 27px;
+}
+
 .selection-cards-mobile .selection-text p {
     font-family: Inika;
     font-size: 14px;
@@ -2011,14 +2017,13 @@ h3 {
 }
 
 .selection-img.collection img {
-   object-fit: cover;
-   width: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .selection-img.collection {
-    display: flex;
-    align-items: center;
     padding: 8px 45px 9px 40px;
+    align-items: center;
 }
 
 .selection-card.collection {
@@ -4153,7 +4158,6 @@ text-align: left;
 
     .selection-card.collection {
         width: 161px;
-        height: 95px;
     }
 
     .selection-img.collection {
@@ -4199,11 +4203,6 @@ text-align: left;
         font-weight: 700;
         line-height: 14.11px;
         text-align: left;
-    }
-
-    .selection-img.collection img {
-        object-fit: cover;
-        width: 100%;
     }
 
     .hidden-link {
