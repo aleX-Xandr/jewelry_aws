@@ -2023,11 +2023,14 @@ h3 {
 }
 
 .selection-img.collection img {
-    padding: 8px 45px 9px 40px;
+   object-fit: cover;
+   width: 100%;
 }
 
 .selection-img.collection {
+    display: flex;
     align-items: center;
+    padding: 8px 45px 9px 40px;
 }
 
 .selection-card.collection {
@@ -4162,11 +4165,12 @@ text-align: left;
 
     .selection-card.collection {
         width: 161px;
+        height: 95px;
     }
 
     .selection-img.collection {
-        width: 161px;
-        height: 95px;
+        object-fit: cover;
+        width: 100%;
     }
 
     .collection-container {
