@@ -952,12 +952,6 @@ ul li {
     height: 95px;
 }
 
-.selection-cards-mobile .selection-img img {
-    width: 105px;
-    height: 95px;
-    padding: 0 29px 0 27px;
-}
-
 .selection-cards-mobile .selection-text p {
     font-family: Inika;
     font-size: 14px;
@@ -1013,12 +1007,6 @@ ul li {
     height: 221px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-}
-
-.selection-img img {
-    padding: 8px 40px 8px 40px;
-    height: 206px;
-    width: 225px;
 }
 
 .selection-info {
@@ -4169,8 +4157,9 @@ text-align: left;
     }
 
     .selection-img.collection {
-        object-fit: cover;
-        width: 100%;
+        padding: 6px 15px 4px 11px;
+        width: 135px;
+        height: 85px;
     }
 
     .collection-container {
@@ -4213,9 +4202,8 @@ text-align: left;
     }
 
     .selection-img.collection img {
-        padding: 6px 15px 4px 11px;
-        width: 135px;
-        height: 85px;
+        object-fit: cover;
+        width: 100%;
     }
 
     .hidden-link {
