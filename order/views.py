@@ -30,7 +30,7 @@ def order(request):
             "amount": order.get_price(),
             "item_name": f"ORDER #{order.id}",
             "invoice": f"{order.id}",
-            "currency": "EUR",
+            "currency_code": "EUR",
             "notify_url": f"https://{host}{reverse('paypal-ipn')}",
             "return": f"https://{host}{reverse('index')}",
             "cancel_return": f"https://{host}{reverse('index')}",

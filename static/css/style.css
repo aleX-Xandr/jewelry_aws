@@ -667,18 +667,16 @@ ul li {
 }
 
 .jewerly-img {
+    padding: 26px 57px 16px 56px;
+    background-color: #fff;
+    box-shadow: 18px 14px 55.2px 0 #00000014;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .jewerly-img img {
-    border-bottom-right-radius: 15px;
-    box-shadow: 18px 14px 55.2px 0 #00000014;
-    border-bottom-left-radius: 15px;
-    max-height: 300px;
-    background-color: #fff;
-    width: 225px;
-    height: 225px;
-    max-width: 340px;
-    padding: 26px 57px 16px 56px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .jewerly-info .arrow-right-direction {
@@ -3867,14 +3865,14 @@ text-align: left;
 
     .jewerly-img {
         width: 100%;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        padding: 5px 20px 0 21px;
     }
 
     .jewerly-img img {
-        border-bottom-right-radius: 6px;
-        height: 120px;
-        width: 120px;
-        border-bottom-left-radius: 6px;
-        padding: 5px 20px 0 21px;
+        width: 100%;
+        object-fit: cover;
     }
 
     .order-window-mobile {
