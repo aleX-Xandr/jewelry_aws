@@ -37,12 +37,30 @@ def product(request, slug):
 
     materials = Material.objects.filter()
     material_get = request.GET.get('material')
-    if not material_get:
-        material = materials.first()
-    else:
+    if material_get:
         material = Material.objects.filter(id=material_get).first()
+        contain_material = ''
+        if material.name == 'Gold':
+            contain_material = 'oro giallo'
+        elif material.name == 'Rose Gold':
+            contain_material = 'oro rosa'
+        elif material.name == 'Silver':
+            contain_material = 'oro bianco'
+        found_product = Product.objects.filter(name=product.name, description__icontains=contain_material)
+        if found_product:
+            return redirect('product', slug=found_product.slug)
+        else:
+            return redirect('product', slug=product.slug)
 
-    images = product.images.filter(material=material)
+    images = product.images.filter()
+
+    chosen_material = None
+    if 'oro giallo' in product.description:
+        chosen_material = materials.filter(name='Gold').first()
+    elif 'oro rosa' in product.description:
+        chosen_material = materials.filter(name='Rose Gold').first()
+    elif 'oro bianco' in product.description:
+        chosen_material = materials.filter(name='Silver').first()
 
     context = {
         "product": product,
@@ -50,7 +68,7 @@ def product(request, slug):
         "images": images,
 
         "materials": materials,
-        "chosen_material": material,
+        "chosen_material": chosen_material,
     }
     return render(request, 'product.html', context=context)
 

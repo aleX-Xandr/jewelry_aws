@@ -39,13 +39,14 @@
             <div class="settings-price">
                 <a href="#">€{{product.price}}</a>
             </div>
+            {% if product.quantity %}
             <div class="settings-amount">
                 <form action="{% url 'order_edit' %}" method="GET">
                     <div class="container-amount">
                         <div class="minus-plus">
                             <button id="decrement" class="decrementProduct" href="#">-</button>
                             <input type="hidden" name="product_id" value="{{product.id}}">
-                            <input type="text" id="numberInput" name='quantity' value="0" min="0" max="{{product.quantity}}" readonly required>
+                            <input type="text" id="numberInput" name='quantity' value=1 min="1" max="{{product.quantity}}" readonly required>
                             <button id="increment" class="incrementProduct" href="#">+</button>
                         </div>
                         <p class="text-minus-plus">quantità</p>
@@ -53,6 +54,7 @@
                     <button type="submit" class="buy-now">Buy Now</button>
                 </form>
             </div>
+            {% endif %}
         </div>
         <div class="navigation-links">
             <a href="#"> &#10094;</a>
