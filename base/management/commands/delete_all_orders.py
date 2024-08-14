@@ -4,4 +4,5 @@ from order.models import Order
 
 
 class Command(BaseCommand):
-    Order.objects.all().delete()
+    def handle(self, *args, **options):
+        Order.objects.all().delete()
