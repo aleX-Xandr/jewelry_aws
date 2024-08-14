@@ -4,11 +4,18 @@ from jewelry.models import BaseModel
 
 
 class Order(BaseModel):
+    class Status(models.TextChoices):
+        waiting = 'waiting'
+        success = 'success'
+        cancel = 'cancel'
+
     user = models.ForeignKey('user.User', on_delete=models.CASCADE, null=True, blank=True)
     session_key = models.CharField(max_length=40, null=True, blank=True)
 
     address = models.CharField('Address', max_length=255, default='', blank=True)
     contact = models.CharField('Contact', max_length=255, default='', blank=True)
+
+    status = models.CharField('Status', max_length=10, choices=Status.choices, default=Status.waiting)
 
     class Meta:
         verbose_name = 'Order'

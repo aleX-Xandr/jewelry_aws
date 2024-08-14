@@ -15,6 +15,8 @@ def webhook_handler(sender, **kwargs):
 
         order_id = ipn_obj.invoice
         order = Order.objects.filter(id=order_id).first()
+        order.status = 'success'
+        order.save()
         order_log(order)
     else:
         error_order_log('unsuccessful_payment')
