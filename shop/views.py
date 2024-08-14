@@ -46,7 +46,7 @@ def product(request, slug):
             contain_material = 'oro rosa'
         elif material.name == 'Silver':
             contain_material = 'oro bianco'
-        found_product = Product.objects.filter(name=product.name, description__icontains=contain_material)
+        found_product = Product.objects.filter(name=product.name, description__icontains=contain_material).first()
         if found_product:
             return redirect('product', slug=found_product.slug)
         else:
