@@ -1970,6 +1970,7 @@ h3 {
 }
 
 .collection {
+    flex: 1;
     justify-content: center;
     display: flex;
     text-align: center;
@@ -2023,6 +2024,7 @@ h3 {
 }
 
 .selection-text.collection {
+    flex: 1;
     margin-bottom: 26px;
     margin-left: 20px;
 }
@@ -3074,7 +3076,7 @@ button.next {
     align-items: center;
 }
 .constructor-item {
-    width: 100px;
+    width: 120px;
     font-size: 0;
     text-align: center;
     margin: 58px 0 0;
