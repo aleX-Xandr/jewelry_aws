@@ -1011,6 +1011,7 @@ ul li {
     background-color: #FFFCF3;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
+    flex: 1;
 }
 
 .selection-text p {
@@ -2025,6 +2026,7 @@ h3 {
 .selection-text.collection {
     margin-bottom: 26px;
     margin-left: 20px;
+    flex: 1;
 }
 
 .selection-text.collection.white {
