@@ -1732,6 +1732,7 @@ h3 {
     display: flex;
     overflow: hidden;
     height: 449px;
+    justify-content: center;
 }
 
 .presentosa-left.two{
@@ -1854,7 +1855,6 @@ h3 {
 
 .presentosa-img img {
     object-fit: cover;
-    width: 100%;
     border-radius: 6px;
 }
 
