@@ -1646,7 +1646,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1185px;
     flex-direction: column;
     background-color: #1B2251;
     position: relative;
@@ -2133,7 +2133,7 @@ h3 {
 .slider-container.announce-slider-container .slide {
     width: 1160px;
     margin: 10px 14px 50px;
-    box-shadow: 18px 14px 55.2px 0 #00000014;
+    box-shadow: 0 14px 55.2px 0 #00000014;
     justify-content: start;
 }
 
