@@ -1931,6 +1931,9 @@ h3 {
     vertical-align: middle;
     margin: 0;
     padding: 0;
+
+    font: inherit;
+    color: inherit;
 }
 
 #first-icon {
@@ -3329,7 +3332,6 @@ justify-content: space-around;
     .presentosa-img {
         padding: 50px 0;
         height: 350px;
-        max-width: 550px;
     }
     .presentosa-left{
         padding-top: 0;
