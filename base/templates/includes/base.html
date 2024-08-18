@@ -18,13 +18,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body style="display: flex;">
+<body>
     {% include 'includes/order_bin.html' %}
 
     {% include 'includes/header.html' %}
 
     {% block 'content' %}{% endblock %}
-    <div style="flex: 1;"></div>
 
     {% include 'includes/footer.html' %}
 
