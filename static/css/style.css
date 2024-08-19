@@ -3335,6 +3335,11 @@ justify-content: space-around;
         height: 350px;
         max-width: 500px;
     }
+
+    .presentosa-img two {
+        max-width: none;
+    }
+
     .presentosa-left{
         padding-top: 0;
     }
