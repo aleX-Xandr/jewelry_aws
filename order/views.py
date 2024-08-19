@@ -51,6 +51,7 @@ def edit(request):
 
     product_id = request.GET.get('product_id')
     quantity = int(request.GET.get('quantity'))
+    ajax = request.GET.get('ajax')
 
     product = Product.objects.filter(id=product_id)
     if not product:
@@ -60,7 +61,7 @@ def edit(request):
 
     if quantity > product.quantity:
         quantity = product.quantity
-        # return JsonResponse({"status": False, "message": "invalid_quantity"})
+        return JsonResponse({"status": False, "message": "invalid_quantity"})
 
     check_product = order.products.filter(product=product)
     if not check_product:
@@ -80,7 +81,10 @@ def edit(request):
         else:
             check_product.quantity = quantity
             check_product.save()
-    return redirect('order')
+    if ajax:
+        return JsonResponse({"status": True, "order_price": order.get_price(), 'product_price': check_product.get_price()})
+    else:
+        return redirect('order')
 
 
 def delete(request):

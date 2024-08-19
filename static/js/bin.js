@@ -4,14 +4,22 @@ $(document).ready(function() {
 
         var redirect = $(this).closest('.bin-card').attr('on-edit');
         var productId = $(this).closest('.bin-card').attr('data-product');
-        var braceletId = $(this).closest('.bin-card').attr('data-bracelet');
-        if (productId != '') {
-            window.location.replace(redirect + "?product_id=" + productId + "&quantity=" + (value + 1));
-        } else if (braceletId != '') {
-            window.location.replace(redirect + "?bracelet_id=" + productId + "&quantity=" + (value + 1));
-        }
+        var price = $(this).closest('.bin-card').attr('data-price');
 
-//        $(this).siblings('.numberInput').val(value + 1);
+        var url = redirect + "?product_id=" + productId + "&quantity=" + (value + 1) + "&ajax=true";
+
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function(result){
+                console.log(result);
+                $('.payment-price').each(function (index, element) {
+                    $(this).find('a').text('€' + result.order_price.toFixed(1));
+                });
+          }});
+
+         $(this).siblings('.numberInput').val(value + 1);
+         $(this).closest('.bin-card').find('.bin-price').text('€' + ((value + 1) * price).toFixed(1));
     });
 
     $('.decrement').click(function() {
@@ -19,20 +27,33 @@ $(document).ready(function() {
 
         var redirect = $(this).closest('.bin-card').attr('on-edit');
         var productId = $(this).closest('.bin-card').attr('data-product');
-        window.location.replace(redirect + "?product_id=" + productId + "&quantity=" + (value - 1));
+        var price = $(this).closest('.bin-card').attr('data-price');
 
-//        if (value > 1) {
-//            $(this).siblings('.numberInput').val(value - 1);
-//        } else {
-//            $(".bin-card").each(function( index ) {
-//              var prodId = $(this).attr('product-id');
-//
-//              if (productId == prodId) {
-//                $(this).remove();
-//              }
-//            });
-//            $(this).closest('.bin-card').remove();
-//        }
+         var url = redirect + "?product_id=" + productId + "&quantity=" + (value - 1) + "&ajax=true";
+
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function(result){
+                console.log(result);
+                $('.payment-price').each(function (index, element) {
+                    $(this).find('a').text('€' + result.order_price.toFixed(1));
+                });
+          }});
+
+        if (value > 1) {
+            $(this).siblings('.numberInput').val(value - 1);
+            $(this).closest('.bin-card').find('.bin-price').text('€' + ((value - 1) * price).toFixed(1));
+        } else {
+            $(".bin-card").each(function( index ) {
+              var prodId = $(this).attr('product-id');
+
+              if (productId == prodId) {
+                $(this).remove();
+              }
+            });
+            $(this).closest('.bin-card').remove();
+        }
     });
     $(document).ready(function() {
         $('.basket-img').click(function() {
