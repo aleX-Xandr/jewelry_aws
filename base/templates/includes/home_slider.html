@@ -51,11 +51,13 @@
                         {% endfor %}
                       <div class="bottom-row" style="height: 172px; width: 100%;">
                           {% for product in material.coulombs_2 %}
-                            <div class="slide1 {{product.position}}">
-                                <a href="{% url 'product' slug=product.slug %}">
+                            <div class="slide1 {{product.position}}" >
+                                <a href="{% url 'product' slug=product.slug %}" class="slide-image-link">
                                     <img src="{{product.preview.url}}" alt="">
                                 </a>
-                                <p class="art">{{product.get_name}}</p>
+                                <a href="{% url 'product' slug=product.slug %}">
+                                    <p class="art">{{product.get_name}}</p>
+                                </a>
                                 <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                             </div>
                         {% endfor %}
@@ -64,11 +66,13 @@
                     <div class="slide-two-container mobile">
                        <div class="row one">
                             {% for product in material.mob_coulombs_1 %}
-                                <div class="slide1 {{product.position}}">
-                                    <a href="{% url 'product' slug=product.slug %}">
+                                    <div class="slide1 {{product.position}}">
+                                        <a href="{% url 'product' slug=product.slug %}" class="slide-image-link">
                                         <img src="{{product.preview.url}}" alt="">
                                     </a>
-                                    <p class="art">{{product.get_name}}</p>
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <p class="art">{{product.get_name}}</p>
+                                    </a>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
                             {% endfor %}
@@ -76,10 +80,12 @@
                         <div class="row two">
                             {% for product in material.mob_coulombs_2 %}
                                 <div class="slide1 {{product.position}}">
-                                    <a href="{% url 'product' slug=product.slug %}">
+                                    <a href="{% url 'product' slug=product.slug %}" class="slide-image-link">
                                         <img src="{{product.preview.url}}" alt="">
                                     </a>
-                                    <p class="art">{{product.get_name}}</p>
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <p class="art">{{product.get_name}}</p>
+                                    </a>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
                             {% endfor %}
@@ -87,10 +93,12 @@
                        <div class="row three">
                             {% for product in material.mob_coulombs_3 %}
                                 <div class="slide1 {{product.position}}">
-                                    <a href="{% url 'product' slug=product.slug %}">
+                                    <a href="{% url 'product' slug=product.slug %}" class="slide-image-link">
                                         <img src="{{product.preview.url}}" alt="">
                                     </a>
-                                    <p class="art">{{product.get_name}}</p>
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <p class="art">{{product.get_name}}</p>
+                                    </a>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
                             {% endfor %}
