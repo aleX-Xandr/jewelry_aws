@@ -3333,6 +3333,7 @@ justify-content: space-around;
     .presentosa-img {
         padding: 50px 0;
         height: 350px;
+        max-width: 500px;
     }
     .presentosa-left{
         padding-top: 0;
