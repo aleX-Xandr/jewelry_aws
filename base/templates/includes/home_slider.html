@@ -40,7 +40,9 @@
                     <div class="slide-two-container">
                         {% for product in material.coulombs_1 %}
                         <div class="slide1 {{product.position}}">
-                            <img src="{{product.preview.url}}" alt="">
+                            <a href="{% url 'product' slug=product.slug %}">
+                                <img src="{{product.preview.url}}" alt="">
+                            </a>
                             <a href="{% url 'product' slug=product.slug %}">
                                 <p class="art">{{product.get_name}}</p>
                             </a>
