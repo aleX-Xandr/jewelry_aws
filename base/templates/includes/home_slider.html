@@ -39,58 +39,58 @@
                 <div class="presentosa-img two">
                     <div class="slide-two-container">
                         {% for product in material.coulombs_1 %}
-                        <a href="{% url 'product' slug=product.slug %}">
-                            <div class="slide1 {{product.position}}">
+                        <div class="slide1 {{product.position}}">
+                            <a href="{% url 'product' slug=product.slug %}">
                                 <img src="{{product.preview.url}}" alt="">
-                                <p class="art">{{product.get_name}}</p>
-                                <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
-                            </div>
-                        </a>
+                            </a>
+                            <p class="art">{{product.get_name}}</p>
+                            <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
+                        </div>
                         {% endfor %}
                       <div class="bottom-row" style="height: 172px; width: 100%;">
                           {% for product in material.coulombs_2 %}
-                        <a href="{% url 'product' slug=product.slug %}">
                             <div class="slide1 {{product.position}}">
-                                <img src="{{product.preview.url}}" alt="">
+                                <a href="{% url 'product' slug=product.slug %}">
+                                    <img src="{{product.preview.url}}" alt="">
+                                </a>
                                 <p class="art">{{product.get_name}}</p>
                                 <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                             </div>
-                        </a>
                         {% endfor %}
                       </div>
                     </div>
                     <div class="slide-two-container mobile">
                        <div class="row one">
                             {% for product in material.mob_coulombs_1 %}
-                           <a href="{% url 'product' slug=product.slug %}">
                                 <div class="slide1 {{product.position}}">
-                                    <img src="{{product.preview.url}}" alt="">
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <img src="{{product.preview.url}}" alt="">
+                                    </a>
                                     <p class="art">{{product.get_name}}</p>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
-                           </a>
                             {% endfor %}
                        </div>
                         <div class="row two">
                             {% for product in material.mob_coulombs_2 %}
-                            <a href="{% url 'product' slug=product.slug %}">
                                 <div class="slide1 {{product.position}}">
-                                    <img src="{{product.preview.url}}" alt="">
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <img src="{{product.preview.url}}" alt="">
+                                    </a>
                                     <p class="art">{{product.get_name}}</p>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
-                            </a>
                             {% endfor %}
                        </div>
                        <div class="row three">
                             {% for product in material.mob_coulombs_3 %}
-                           <a href="{% url 'product' slug=product.slug %}">
                                 <div class="slide1 {{product.position}}">
-                                    <img src="{{product.preview.url}}" alt="">
+                                    <a href="{% url 'product' slug=product.slug %}">
+                                        <img src="{{product.preview.url}}" alt="">
+                                    </a>
                                     <p class="art">{{product.get_name}}</p>
                                     <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                                 </div>
-                           </a>
                             {% endfor %}
                        </div>
                     </div>
