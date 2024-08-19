@@ -43,6 +43,11 @@ class Product(BaseModel):
     def __str__(self):
         return self.name
 
+    def get_name(self):
+        if len(self.name) > 15:
+            return self.name[:15] + '...'
+        return self.name
+
 
 class ProductImage(BaseModel):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')
