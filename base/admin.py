@@ -53,4 +53,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(ContactRequest)
 class ContactRequestAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'message']
+    list_display = ['name', 'email', 'message', 'created_at']

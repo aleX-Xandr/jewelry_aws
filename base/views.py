@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from base.models import ContactRequest, Contact, Page, AboutImage
 from base.service import get_materials_for_slider
+from order.hooks import send_log
 from shop.models import Product, Material, Category
 
 
@@ -60,4 +61,10 @@ def contact_request(request):
         email=email,
         message=message)
     contact_req.save()
+
+    text = 'Новая заявка на контакт:\n\n' \
+           f'Имя: {contact_req.name}\n' \
+           f'Email: {contact_req.email}\n' \
+           f'Сообщение: {contact_req.message}'
+    send_log(text)
     return redirect('contact')

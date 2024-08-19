@@ -4,7 +4,7 @@
 {% block 'content' %}
 <h2 class="nav-title">{{category.name}}</h2>
 
-<div class="selection-cards">
+<div class="selection-cards" style="min-height: 50vh;">
     <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
     {% for product in page %}
     <div class="selection-card">
@@ -24,7 +24,7 @@
     {% endfor %}
 </div>
 
-<div class="selection-cards-mobile">
+<div class="selection-cards-mobile" style="min-height: 50vh;">
     <img class="bg-container" src="{% static 'img/bg-contacts.jpg' %}" alt="">
     {% for product in page %}
     <div class="selection-card">

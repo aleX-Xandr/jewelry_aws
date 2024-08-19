@@ -71,6 +71,7 @@ class ContactRequest(BaseModel):
     class Meta:
         verbose_name = 'Contact Request'
         verbose_name_plural = 'Contact Requests'
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.name
