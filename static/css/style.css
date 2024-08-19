@@ -3336,7 +3336,7 @@ justify-content: space-around;
         max-width: 500px;
     }
 
-    .presentosa-img two {
+    .presentosa-img.two {
         max-width: none;
     }
 

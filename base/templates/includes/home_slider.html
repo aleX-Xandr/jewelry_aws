@@ -40,10 +40,10 @@
                     <div class="slide-two-container">
                         {% for product in material.coulombs_1 %}
                         <div class="slide1 {{product.position}}">
+                            <img src="{{product.preview.url}}" alt="">
                             <a href="{% url 'product' slug=product.slug %}">
-                                <img src="{{product.preview.url}}" alt="">
+                                <p class="art">{{product.get_name}}</p>
                             </a>
-                            <p class="art">{{product.get_name}}</p>
                             <a href="#" class="art-price" style="color: {{material.color}};">€{{product.price}}</a>
                         </div>
                         {% endfor %}
