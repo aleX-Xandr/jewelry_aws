@@ -106,8 +106,12 @@ ul li {
     font-size: 36px;
 }
 
-.selection-text {
+.selection-text a p {
     min-height: 45px;
+}
+
+.selection-info {
+    height: 180px;
 }
 
 .main-box .container .nav-bar .image {
@@ -3577,6 +3581,10 @@ text-align: left;
 }
 
 @media (max-width: 660px) {
+    .selection-info {
+        height: 132px;
+    }
+
     .presentosa-img{
         height: 520px;
         align-items: center;
