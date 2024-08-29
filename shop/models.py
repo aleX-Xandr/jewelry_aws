@@ -48,6 +48,10 @@ class Product(BaseModel):
             return self.name[:15] + '...'
         return self.name
 
+    def get_longer_name(self):
+        if len(self.name) > 25:
+            return self.name[:25] + '...'
+        return self.name
 
 class ProductImage(BaseModel):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')
