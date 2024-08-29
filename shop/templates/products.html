@@ -4,11 +4,17 @@
 {% block 'content' %}
 <style>
     .selection-text a p {
-        min-height: 35px;
+        height: 77px;
     }
 
     .selection-info {
         height: 180px;
+    }
+
+    @media (max-width: 660px) {
+        .selection-text a p {
+            height: 35px;
+        }
     }
 </style>
 
