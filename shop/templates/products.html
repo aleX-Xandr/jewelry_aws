@@ -2,6 +2,22 @@
 {% load static %}
 
 {% block 'content' %}
+<style>
+    .selection-text a p {
+        min-height: 45px;
+    }
+
+    .selection-info {
+        height: 180px;
+    }
+
+    @media (max-width: 660px) {
+        .selection-info {
+            height: 140px;
+        }
+    }
+</style>
+
 <h2 class="nav-title">{{category.name}}</h2>
 
 <div class="selection-cards" style="min-height: 50vh;">
