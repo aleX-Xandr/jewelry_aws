@@ -13,7 +13,7 @@
         </div>
         <div class="selection-info">
             <div class="selection-text">
-                <a href="{% url 'product' slug=product.slug %}"><p>{{product.name}}</p></a>
+                <a href="{% url 'product' slug=product.slug %}"><p>{{product.get_name}}</p></a>
             </div>
             <div class="selection-btn-price">
                 <a class="buy-now-btn" href="{% url 'product' slug=product.slug %}">Buy Now</a>
@@ -33,11 +33,11 @@
         </div>
         <div class="selection-info">
             <div class="selection-text">
-                <a href="{% url 'product' slug=product.slug %}"><p>{{product.name}}</p></a>
+                <a href="{% url 'product' slug=product.slug %}"><p>{{product.get_name}}</p></a>
             </div>
             <div class="selection-btn-price">
                 <a class="buy-now-btn" href="{% url 'product' slug=product.slug %}">Buy Now</a>
-                <a class="selection-price" href="{{product.price}}">€130.00</a>
+                <a class="selection-price" href="{{product.price}}">€{{product.price}}</a>
             </div>
         </div>
     </div>
