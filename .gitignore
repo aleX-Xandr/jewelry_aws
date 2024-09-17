@@ -5,3 +5,5 @@
 /static/ckeditor
 /.env
 /sftp-config.json
+/venv/
+__pycache__

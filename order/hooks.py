@@ -46,7 +46,7 @@ def error_order_log(reason):
 def order_log(order: Order):
     positions_text = ""
     for product in order.products.all():
-        text = f"Название: {product.product.name}\n" \
+        text = f"Название: {product.product.name} {product.product.materials.name}\n" \
                f"Стоимость: {product.get_price()} ({product.quantity} шт.)\n\n"
         positions_text += text
 
