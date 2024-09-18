@@ -3208,7 +3208,70 @@ justify-content: space-around;
     width: 36px;
     height: 36px;
 }       
-    
+
+.delivery-switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.delivery-switcher input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.delivery-switcher .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.delivery-switcher .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.delivery-switcher input:checked + .slider {
+    background-color: #2196F3;
+}
+
+.delivery-switcher input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.delivery-switcher input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.delivery-switcher .slider.round {
+    border-radius: 34px;
+}
+
+.delivery-switcher .slider.round:before {
+    border-radius: 50%;
+}
+
+.delivery-label {
+    align-content: center;
+    padding-left: 10px;
+}
 
 @media (max-width: 1500px) {
     .info-container .text-info .adress {
@@ -4527,13 +4590,13 @@ text-align: center;
     .constructor .bin-img-img{
         width: 118px;
         height: 109px;
-   
-}
-.thumbnail-container{
-    margin-bottom: 0;
-    margin-top: 10px;
-    height: 60px;
-}
+    
+    }
+    .thumbnail-container{
+        margin-bottom: 0;
+        margin-top: 10px;
+        height: 60px;
+    }
 
     .coming-soon-img{
         width: 100%;

@@ -41,7 +41,15 @@ class Product(BaseModel):
         ordering = ['sort']
 
     def __str__(self):
-        return self.name
+        if 'oro giallo' in self.description:
+            material = 'Gold'
+        elif 'oro rosa' in self.description:
+            material = 'Rose Gold'
+        elif 'oro bianco' in self.description:
+            material = 'Silver'
+        else:
+            material = ''
+        return f"{self.name} {material}"
 
     def get_name(self):
         if len(self.name) > 15:

@@ -42,6 +42,20 @@
                         <input class="input-one-one" type="text" placeholder="Address" required value="{{order.address}}" name="address">
                         <div style="height: 10px;"></div>
                         <input class="input-one-one" type="text" placeholder="Contact" required value="{{order.contact}}" name="contact">
+                        <div style="display: flex; padding: 10px;">
+                            <label class="delivery-switcher">
+                                <input type="checkbox" name="delivery" id="delivery-checkbox" {% if order.delivery %} checked {% endif %}>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="delivery-label">
+                                {% if order.delivery %}
+                                    Consegna per posta (€10)
+                                {% else %}
+                                    Ritiro dal negozio (€0)
+                                {% endif %}
+                            </span>
+                        </div>
+                        
                     </form>
                 </div>
                 <div class="buttons-container">

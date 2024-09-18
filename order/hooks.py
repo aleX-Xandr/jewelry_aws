@@ -46,14 +46,15 @@ def error_order_log(reason):
 def order_log(order: Order):
     positions_text = ""
     for product in order.products.all():
-        text = f"Название: {product.product.name} {product.product.materials.name}\n" \
-               f"Стоимость: {product.get_price()} ({product.quantity} шт.)\n\n"
+        text = f"Название: {product.product}\n" \
+               f"Стоимость: {product.get_price()}€ ({product.quantity} шт.)\n\n"
         positions_text += text
 
     text = f"Новый заказ #{str(order.id).split('-')[0]}\n\n" \
-           f"Стоимость: {order.get_price()}\n" \
+           f"Стоимость: {order.get_price()}€\n" \
            f"Адрес: {order.address}\n" \
            f"Контакты: {order.contact}\n\n" \
+           f"Доставка: {'да' if order.delivery else 'нет'}\n\n" \
            f"Товары:\n\n{positions_text}"
     print(text)
     send_log(text)

@@ -14,7 +14,7 @@ class Order(BaseModel):
 
     address = models.CharField('Address', max_length=255, default='', blank=True)
     contact = models.CharField('Contact', max_length=255, default='', blank=True)
-
+    delivery = models.BooleanField('Delivery', default=False, blank=True)
     status = models.CharField('Status', max_length=10, choices=Status.choices, default=Status.waiting)
 
     class Meta:
@@ -28,6 +28,8 @@ class Order(BaseModel):
         sum = 0
         for product in self.products.all():
             sum += product.get_price()
+        if self.delivery:
+            sum += 10
         return sum
 
     def get_count(self):
