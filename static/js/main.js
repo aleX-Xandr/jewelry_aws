@@ -78,15 +78,22 @@ $(document).ready(function() {
     });
 
     $('#delivery-checkbox').change(function() {
-        if ($(this).is(':checked')) {
-            $('.delivery-label').text('Consegna per posta (€10)');
-        } else {
-            $('.delivery-label').text('Ritiro dal negozio (€0)');
-        }
         let form = $('#checkoutForm');
         let reportValidity = form[0].reportValidity();
+        console.log(reportValidity);
         if(reportValidity){
+            if ($(this).is(':checked')) {
+                $('.delivery-label').text('Consegna per posta (€10)');
+            } else {
+                $('.delivery-label').text('Ritiro dal negozio (€0)');
+            }
             form.submit();
+        }else{
+            if ($(this).is(':checked')) {
+                $(this).prop('checked', false); 
+            }else{
+                $(this).prop('checked', true);
+            }
         }
     });
 
