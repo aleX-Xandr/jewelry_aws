@@ -21,7 +21,7 @@ def order(request):
     if request.method == 'POST':
         order.address = request.POST.get('address', '')
         order.contact = request.POST.get('contact', '')
-        order.delivery = bool(request.POST.get('delivery', ''))
+        order.delivery = request.POST.get('delivery', '') == "Yes"
         order.save()
         return redirect('order')
 

@@ -9,8 +9,17 @@ $(document).ready(function() {
     const increment = $('.increment');
     const decrement = $('.decrement');
 
+    const saveScrollPosition = () => {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+    }
+    const loadScrollPosition = () => {
+        if (sessionStorage.getItem('scrollPosition') !== null) {
+            window.scrollTo(0, sessionStorage.getItem('scrollPosition'));
+        }
+    }
+    
+    loadScrollPosition()
 
-    // Setting-right-color click event
     $elements.on('click', function() {
         $elements.removeClass('with-border');
         $(this).addClass('with-border');
@@ -18,7 +27,6 @@ $(document).ready(function() {
         $(this).addClass('checked'); 
     });
 
-    // Button click event
     $buttons.on('click', function() {
         console.log('button clicked');
     });
@@ -30,13 +38,11 @@ $(document).ready(function() {
         $('#largeImage').attr('src', src);
     });
 
-    // Pagination click event
     $('.pagination').on('click', function() {
         $('.pagination').removeClass('activePagination');
         $(this).addClass('activePagination');
     });
 
-    // Increment and decrement input value
     $('.incrementProduct').on('click', function() {
         var value = parseInt($('#numberInput').val(), 10);
         $('#numberInput').val(value + 1);
@@ -55,7 +61,6 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    // Breadcrumb click event
     $('.breadcrumb').on('click', function() {
         $('.breadcrumb').removeClass('active');
         $(this).addClass('active');
@@ -77,43 +82,16 @@ $(document).ready(function() {
         }
     });
 
-    $('#delivery-checkbox').change(function() {
+    $('input[name="delivery"]').on('click', function(event) {
         let form = $('#checkoutForm');
         let reportValidity = form[0].reportValidity();
         console.log(reportValidity);
         if(reportValidity){
-            if ($(this).is(':checked')) {
-                $('.delivery-label').text('Consegna per posta (€10)');
-            } else {
-                $('.delivery-label').text('Ritiro dal negozio (€0)');
-            }
+            saveScrollPosition()
             form.submit();
         }else{
-            if ($(this).is(':checked')) {
-                $(this).prop('checked', false); 
-            }else{
-                $(this).prop('checked', true);
-            }
+            event.preventDefault();
         }
     });
-
- // Add checkmark div to each clickable object
-
-    
- // Toggle checkmark visibility on click
- // $('.clickable-object').on('click', function() {
- //     $(this).find('.checkmark').toggle();
- // });
-
- // // Hide checkmark on click
- // $('.checkmark').on('click', function(event) {
- //     event.stopPropagation(); // Prevent triggering the parent click event
- //     $(this).hide();
- // });
-
-// $('.buy-now.pc').on('click', function(event) {
-//     event.preventDefault(); // Prevent triggering the parent click event
-//     $('#constructor_form').submit();
-// });
 
 });   

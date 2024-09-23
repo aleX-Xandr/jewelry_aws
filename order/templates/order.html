@@ -43,19 +43,11 @@
                         <div style="height: 10px;"></div>
                         <input class="input-one-one" type="text" placeholder="Contact" required value="{{order.contact}}" name="contact">
                         <div style="display: flex; padding: 10px;">
-                            <label class="delivery-switcher">
-                                <input type="checkbox" name="delivery" id="delivery-checkbox" {% if order.delivery %} checked {% endif %}>
-                                <span class="slider round"></span>
-                            </label>
-                            <span class="delivery-label">
-                                {% if order.delivery %}
-                                    Consegna per posta (€10)
-                                {% else %}
-                                    Ritiro dal negozio (€0)
-                                {% endif %}
-                            </span>
+                                <input type="radio" name="delivery" value="Yes" {% if order.delivery %} checked {% endif %}> Consegna per posta (€10)
                         </div>
-                        
+                        <div style="display: flex; padding: 10px;">
+                                <input type="radio" name="delivery" value="No" {% if not order.delivery %} checked {% endif %}> Ritiro dal negozio (€0)
+                        </div>
                     </form>
                 </div>
                 <div class="buttons-container">
