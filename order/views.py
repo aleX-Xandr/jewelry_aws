@@ -5,9 +5,9 @@ from base.models import Page
 from base.service import back
 from order.models import OrderProduct
 from order.service import order_service
+from order.utils import CustomPayPalPaymentsForm
 from shop.models import Product, Bracelet
 
-from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 from django.urls import reverse
 
@@ -36,7 +36,7 @@ def order(request):
             "return_url": f"https://{host}{reverse('index')}",
             "cancel_url": f"https://{host}{reverse('index')}",
         }
-        paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
+        paypal_payment = CustomPayPalPaymentsForm(initial=paypal_checkout)
     else:
         paypal_payment = None
 
