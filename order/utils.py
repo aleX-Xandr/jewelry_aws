@@ -1,10 +1,7 @@
-from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from paypal.standard.forms import PayPalPaymentsForm
 
 class CustomPayPalPaymentsForm(PayPalPaymentsForm):
 
     def get_html_submit_element(self):
-        return format_html(
-            """<input type="image" src="{0}" name="submit" alt="Buy it Now" />""",
-            self.get_image(),
-        )
+        return mark_safe("""<button type="submit">Procedi all&rsquo;acquisto</button>""")
