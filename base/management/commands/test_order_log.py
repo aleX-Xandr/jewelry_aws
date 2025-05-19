@@ -8,7 +8,13 @@ from order.hooks import order_log
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        order = Order.objects.order_by("-id").first()
-        print(order)
-        order_log(order)
+        orders = Order.objects.order_by("-id").all()
+        for order in orders:
+            if len(order.products) > 0:
+                order_log(order)
+                break
+
+        else:
+            print("No orders found with products.")
+            return
         
