@@ -10,12 +10,14 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         orders = (
             Order.objects
-            .filter(products__product__name="ANELLO CAMMEO GAMBO REGOLABILE")
+            .filter(products__product__name="ANELLO ROSONE DI COLLEMAGGIO bombato e pietra")
             .order_by("-id")
             .all()
         )
         for order in orders:
             if order.products.exists():
+                for product in order.products.all():
+                    print("DEBUG", product.ring_size)
                 order_log(order)
 
         else:
