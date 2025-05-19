@@ -52,7 +52,7 @@ def edit(request):
 
     product_id = request.GET.get('product_id')
     quantity = int(request.GET.get('quantity'))
-    ring_size = request.GET.get('ringSize', None)
+    ring_size = request.GET.get('ring_size', None)
     ajax = request.GET.get('ajax')
 
     product = Product.objects.filter(id=product_id).first()
