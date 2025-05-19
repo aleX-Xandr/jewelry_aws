@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         orders = Order.objects.order_by("-id").all()
         for order in orders:
-            if len(order.products) > 0:
+            if order.products.exists():
                 order_log(order)
                 break
 
