@@ -5,6 +5,7 @@ from base.models import Page
 from order.service import order_service
 from shop.models import Category, Product, Bracelet, Material
 
+RING_SIZES = [str(i) for i in range(10, 23)]
 
 def categories(request):
     categories = Category.objects.filter()
@@ -66,7 +67,7 @@ def product(request, slug):
         "product": product,
         "recommend_products": recommend_products,
         "images": images,
-
+        "ring_sizes": RING_SIZES,
         "materials": materials,
         "chosen_material": chosen_material,
     }
