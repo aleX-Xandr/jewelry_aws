@@ -17,7 +17,6 @@ class Command(BaseCommand):
         for order in orders:
             if order.products.exists():
                 order_log(order)
-                break
 
         else:
             print("No orders found with products.")
