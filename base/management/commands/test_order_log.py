@@ -8,7 +8,12 @@ from order.hooks import order_log
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        orders = Order.objects.order_by("-id").all()
+        orders = (
+            Order.objects
+            .filter(products__product__name="ANELLO CAMMEO GAMBO REGOLABILE")
+            .order_by("-id")
+            .all()
+        )
         for order in orders:
             if order.products.exists():
                 order_log(order)
