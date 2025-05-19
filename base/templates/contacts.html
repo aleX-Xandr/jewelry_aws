@@ -49,7 +49,7 @@
             {% endfor %}
         </div>
 
-           <div class="form-blocks-container">
+        <div class="form-blocks-container">
             <div class="form-blocks">
                 <div class="form-info">
                     <div class="upper-form-info">
@@ -57,17 +57,23 @@
                         <p>{{settings.contact_form_text}}</p>
                     </div>
                     <div class="down-form-info">
-                        <p>our Email: <a href="mailto: {{settings.contact_email}}">{{settings.contact_email}}</a></p>
+                        <p>Le nostre email: 
+                            <br><a href="mailto: pacella-mauro@libero.it">pacella-mauro@libero.it</a>
+                            <br><a href="mailto: pacella.mauro01@gmail.com">pacella.mauro01@gmail.com</a>
+                        </p>
                     </div>
                 </div>
                 <div class="form-container">
                     <form action="{% url 'contact_request' %}" method="POST" class="form">
                         {% csrf_token %}
                         <div class="form-group">
-                            <input id="name" type="text" class="from-input" name="name" placeholder="Name*" required>
+                            <input id="name" type="text" class="from-input" name="name" placeholder="Nome e Cognome" required>
                         </div>
                         <div class="form-group">
                             <input id="email" type="email" class="from-input" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="phone" type="text" class="from-input" name="phone" placeholder="Numero di telefono">
                         </div>
                         <div id="message-form" class="form-group">
                             <input id="login" type="text" class="from-input" name="message" placeholder="Message" required>
@@ -76,8 +82,7 @@
                     </form>
                 </div>
             </div>
-           </div>
-
+        </div>
     </div>
 </section>
 {% endblock %}

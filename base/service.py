@@ -10,7 +10,7 @@ def get_materials_for_slider():
 
     coulomb = Category.objects.filter(is_coulomb=True).first()
     for material in materials:
-        products = coulomb.products.filter(materials__in=[material])[:9]
+        products = coulomb.products.filter(materials__in=[material]).order_by('?')[:9]
 
         material.coulombs_1 = []
         material.coulombs_2 = []

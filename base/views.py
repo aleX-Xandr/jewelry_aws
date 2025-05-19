@@ -54,6 +54,7 @@ def contact(request):
 def contact_request(request):
     name = request.POST.get('name')
     email = request.POST.get('email')
+    phone = request.POST.get('phone')
     message = request.POST.get('message')
 
     contact_req = ContactRequest(
@@ -65,6 +66,7 @@ def contact_request(request):
     text = 'Новая заявка на контакт:\n\n' \
            f'Имя: {contact_req.name}\n' \
            f'Email: {contact_req.email}\n' \
+           f'Телефон: {phone}\n' \
            f'Сообщение: {contact_req.message}'
     send_log(text)
     return redirect('contact')
