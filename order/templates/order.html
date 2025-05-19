@@ -39,11 +39,11 @@
                 <div class="input-one">
                     <form action="" method="POST" id="checkoutForm">
                         {% csrf_token %}
-                        <input class="input-one-one" type="text" placeholder="Address" required value="{{order.address}}" name="address">
+                        <input class="input-one-one" type="text" placeholder="Indirizzo" required value="{{order.address}}" name="address">
                         <div style="height: 10px;"></div>
-                        <input class="input-one-one" type="text" placeholder="Contact" required value="{{order.contact}}" name="contact">
+                        <input class="input-one-one" type="text" placeholder="Email o numero di telefono" required value="{{order.contact}}" name="contact">
                         <div style="display: flex; padding: 10px;">
-                                <input type="radio" name="delivery" value="Yes" {% if order.delivery %} checked {% endif %}> Consegna per posta (€10)
+                                <input type="radio" name="delivery" value="Yes" {% if order.delivery %} checked {% endif %}> Consegna per posta (€10). Spedizione in 2-5 giorni lavorativi
                         </div>
                         <div style="display: flex; padding: 10px;">
                                 <input type="radio" name="delivery" value="No" {% if not order.delivery %} checked {% endif %}> Ritiro dal negozio (€0)
