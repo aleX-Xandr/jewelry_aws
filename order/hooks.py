@@ -46,9 +46,10 @@ def error_order_log(reason):
 def order_log(order: Order):
     positions_text = ""
     for product in order.products.all():
-        text = f"Название: {product.product}\n" \
-               f"Стоимость: {product.get_price()}€ ({product.quantity} шт.)\n\n"
-        positions_text += text
+        text = f"Название: {product.product}\n"
+        if product.ring_size:
+            text += f"Размер:({product.ring_size})\n"
+        positions_text += text + f"Стоимость: {product.get_price()}€ ({product.quantity} шт.)\n\n"
 
     text = f"Новый заказ #{str(order.id).split('-')[0]}\n\n" \
            f"Стоимость: {order.get_price()}€\n" \

@@ -43,6 +43,7 @@ class OrderProduct(BaseModel):
     order = models.ForeignKey('Order', on_delete=models.CASCADE, related_name='products', null=True)
     product = models.ForeignKey('shop.Product', on_delete=models.CASCADE)
     quantity = models.IntegerField('Quantity', default=1)
+    ring_size = models.CharField(max_length=10, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Order Product'

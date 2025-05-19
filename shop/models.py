@@ -60,6 +60,9 @@ class Product(BaseModel):
         if len(self.name) > 25:
             return self.name[:25] + '...'
         return self.name
+    
+    def is_ring(self):
+        return 'anelli' in self.category.name.lower()
 
 class ProductImage(BaseModel):
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')

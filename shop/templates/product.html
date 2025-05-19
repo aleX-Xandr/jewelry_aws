@@ -51,6 +51,17 @@
                         </div>
                         <p class="text-minus-plus">quantità</p>
                     </div>
+                    {% if product.is_ring %}
+                    <div class="container-amount">
+                        <label for="ringSize">Seleziona la misura:</label>
+                        <select id="ringSize" name="ring_size" required>
+                            <option value="" disabled selected>Seleziona</option>
+                            {% for size in "10 11 12 13 14 15 16 17 18 19 20 21 22".split %}
+                                <option value="{{ size }}">{{ size }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
                     <button type="submit" class="buy-now">Buy Now</button>
                 </form>
             </div>

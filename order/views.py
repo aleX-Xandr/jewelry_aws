@@ -52,19 +52,19 @@ def edit(request):
 
     product_id = request.GET.get('product_id')
     quantity = int(request.GET.get('quantity'))
+    ring_size = request.GET.get('ringSize', None)
     ajax = request.GET.get('ajax')
 
-    product = Product.objects.filter(id=product_id)
+    product = Product.objects.filter(id=product_id).first()
     if not product:
         return JsonResponse({"status": False, "message": "product_not_found"})
-    else:
-        product = product.first()
 
     if quantity > product.quantity:
         quantity = product.quantity
         return JsonResponse({"status": False, "message": "invalid_quantity"})
 
-    check_product = order.products.filter(product=product)
+    check_product = order.products.filter(product=product, ring_size=ring_size).first()
+
     if not check_product:
         if quantity <= 0:
             return redirect(back(request))
@@ -72,18 +72,23 @@ def edit(request):
         check_product = OrderProduct(
             order=order,
             product=product,
-            quantity=quantity)
+            quantity=quantity,
+            ring_size=ring_size,
+        )
         check_product.save()
     else:
-        check_product = check_product.first()
-
         if quantity == 0:
             check_product.delete()
         else:
             check_product.quantity = quantity
             check_product.save()
+
     if ajax:
-        return JsonResponse({"status": True, "order_price": order.get_price(), 'product_price': check_product.get_price()})
+        return JsonResponse({
+            "status": True,
+            "order_price": order.get_price(),
+            'product_price': check_product.get_price()
+        })
     else:
         return redirect('order')
 
