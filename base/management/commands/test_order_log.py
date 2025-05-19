@@ -8,7 +8,7 @@ from order.hooks import order_log
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        order = Order.objects.filter().all()[-1]
+        order = Order.objects.order_by("-id").first()
         print(order)
         order_log(order)
         
