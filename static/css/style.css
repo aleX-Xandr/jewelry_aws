@@ -2019,14 +2019,15 @@ h3 {
 .selection-img.collection img {
     width: 100%;
     object-fit: cover;
-    position: relative;
-    z-index: 1;
+    /* position: relative;
+    z-index: 1; */
+    /* for shine animation */
 }
 .selection-img.collection {
     position: relative;
     padding: 8px 45px 9px 40px;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden;
 }
 
 .selection-img.collection::before {
@@ -2055,7 +2056,7 @@ h3 {
     }
     100% {
         transform: translateX(100%) rotate(25deg);
-    }
+    } */
 }
 
 .selection-card.collection {
