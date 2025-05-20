@@ -2019,11 +2019,43 @@ h3 {
 .selection-img.collection img {
     width: 100%;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
-
 .selection-img.collection {
+    position: relative;
     padding: 8px 45px 9px 40px;
     align-items: center;
+    overflow: hidden;
+}
+
+.selection-img.collection::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 300%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 70%);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.selection-img.collection:hover::before {
+    opacity: 1;
+    animation: shine 2.4s ease-in-out;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(25deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(25deg);
+    }
 }
 
 .selection-card.collection {
