@@ -28,7 +28,6 @@ def order(request):
         return redirect('order')
 
     if order.address and order.contact and order.name:
-        order_log(order) # TODO remove
         paypal_checkout = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": order.get_price(),
