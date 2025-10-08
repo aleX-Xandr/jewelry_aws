@@ -41,6 +41,8 @@
                         {% csrf_token %}
                         <input class="input-one-one" type="text" placeholder="Indirizzo" required value="{{order.address}}" name="address">
                         <div style="height: 10px;"></div>
+                        <input class="input-one-one" type="text" placeholder="Nome e сognome" required value="{{order.name}}" name="name">
+                        <div style="height: 10px;"></div>
                         <input class="input-one-one" type="text" placeholder="Email o numero di telefono" required value="{{order.contact}}" name="contact">
                         <div style="display: flex; padding: 10px;">
                                 <input type="radio" name="delivery" value="Yes" {% if order.delivery %} checked {% endif %}> Consegna per posta (€10). Spedizione in 2-5 giorni lavorativi

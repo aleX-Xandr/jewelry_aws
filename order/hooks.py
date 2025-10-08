@@ -54,7 +54,7 @@ def order_log(order: Order):
     text = f"Новый заказ #{str(order.id).split('-')[0]}\n\n" \
            f"Стоимость: {order.get_price()}€\n" \
            f"Адрес: {order.address}\n" \
-           f"Контакты: {order.contact}\n\n" \
+           f"Контакты: ({order.name}) {order.contact}\n\n" \
            f"Доставка: {'да' if order.delivery else 'нет'}\n\n" \
            f"Товары:\n\n{positions_text}"
     print(text)

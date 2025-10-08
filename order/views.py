@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from base.models import Page
 from base.service import back
+from order.hooks import order_log
 from order.models import OrderProduct
 from order.service import order_service
 from order.utils import CustomPayPalPaymentsForm
@@ -20,12 +21,14 @@ def order(request):
 
     if request.method == 'POST':
         order.address = request.POST.get('address', '')
+        order.name = request.POST.get('name', '')
         order.contact = request.POST.get('contact', '')
         order.delivery = request.POST.get('delivery', '') == "Yes"
         order.save()
         return redirect('order')
 
-    if order.address and order.contact:
+    if order.address and order.contact and order.name:
+        order_log(order) # TODO remove
         paypal_checkout = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": order.get_price(),
